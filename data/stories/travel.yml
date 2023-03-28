@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+  - story: travel_1
+    steps:
+    - intent: information
+      entities:
+      - location_slot: slot
+    - slot_was_set:
+      - location_slot: slot
+    - action: utter_information
+    - intent: location
+    - action: utter_location
+
+  - story: travel_2
+    steps:
+    - intent: information
+      entities:
+      - location_slot: 排云殿
+    - slot_was_set:
+      - location_slot: 排云殿
+    - action: utter_information
+    - intent: ticket
+    - action: utter_ticket
+
+  - story: interactive_story_1
+    steps:
+    - intent: information
+      entities:
+      - location_slot: 排云殿
+    - slot_was_set:
+      - location_slot: 排云殿
+    - action: utter_information
+    - intent: location
+    - action: utter_location
+    - intent: opening_hours
+    - action: utter_opening_hours
+    - intent: time_to_visit
+    - action: utter_time_to_visit

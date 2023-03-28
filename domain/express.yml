@@ -1,0 +1,41 @@
+version: "3.1"
+
+intents:
+  - search_express
+
+entities:
+  - express
+  - number
+
+slots:
+  express:
+    type: text
+    initial_value: null
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: express
+  number:
+    type: text
+    initial_value: null
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: number
+
+responses:
+  utter_ask_express:
+    - text: 请输入需要查询的快递公司,目前只支持顺丰,中通,圆通
+  utter_ask_number:
+    - text: 请输入要查询的{express}快递单号
+  utter_search_stop_number:
+    - text: 关于{express}快递单号{number}查找结束。
+
+actions:
+  - action_search_express
+
+forms:
+  action_search_express_form:
+    required_slots:
+      - express
+      - number

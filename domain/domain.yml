@@ -1,0 +1,75 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  # 测试
+  - bot_first_scene
+  - bot_first_slot
+
+# ##################################################
+# entities
+# ##################################################
+entities:
+  - fslot
+# ##################################################
+# slots
+# ##################################################
+slots:
+  # 测试
+  firstslot:
+    type: text
+    initial_value: null
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: fslot
+# ##################################################
+# responses
+# ##################################################
+responses:
+  utter_greet:
+    - text: Hey! How are you?
+  utter_cheer_up:
+    - image: https://i.imgur.com/nGF1K8f.jpg
+      text: "Here is something to cheer you up:"
+  utter_did_that_help:
+    - text: 有什么能帮助你的？
+  utter_happy:
+    - text: 好啊，来吧！
+  utter_goodbye:
+    - text: 再见~
+  utter_iamabot:
+    - text: 我是人工智能。
+  # 测试
+  utter_ask_firstslot:
+    - text: 这是一个slot插槽
+  utter_stop_slot:
+    - text: 关于{firstslot}信息结束。
+  # default
+  utter_default:
+    - text: 没有听懂~
+# ##################################################
+# actions
+# ##################################################
+actions:
+  - action_hello_world
+  - action_slot
+
+# ##################################################
+# 表单
+# ##################################################
+forms:
+  # 测试表单
+  action_slot_form:
+    required_slots:
+      - firstslot
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

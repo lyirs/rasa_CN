@@ -1,0 +1,13 @@
+version: "3.1"
+
+nlu:
+# 周边景点
+- intent: travel/surrounging_scenic_spots
+  examples: |
+    - 神武门周边都有哪些好玩的地方啊？
+    - 东岳庙周边有其他景点吗？
+# 游玩时间
+- intent: travel/time_to_visit
+  examples: |
+    - 知道东岳庙可以玩多久不？
+    - 你好，可以帮我查一下东岳庙能玩多久吗？

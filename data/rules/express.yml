@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+
+- rule: Activate express Form
+  steps:
+  - intent: search_express
+  - action: action_search_express_form
+  - active_loop: action_search_express_form
+
+- rule: Submit express form
+  condition:
+    - active_loop: action_search_express_form
+  steps:
+  - action: action_search_express_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_search_express
+  - action: utter_search_stop_number
