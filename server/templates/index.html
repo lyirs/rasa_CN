@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Rasa Chatbot</h1>
+        <div id="chatbox">
+        </div>
+        <form id="message-form">
+            <input type="text" name="message" id="message" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#message-form").submit(function(e) {
+                e.preventDefault();
+                let message = $("#message").val();
+                $("#chatbox").append(`<p>You: ${message}</p>`);
+                $.post("/send_message", {message: message}).done(function(response) {
+                    let botMessage = response[0].text;
+                    $("#chatbox").append(`<p>Bot: ${botMessage}</p>`);
+                });
+                $("#message").val("");
+            });
+        });
+    </script>
+</body>
+</html>
