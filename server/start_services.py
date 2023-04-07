@@ -13,7 +13,7 @@ rasa_server = subprocess.Popen(["rasa", "run", "--enable-api", "--cors", "*"])
 # backend_server = subprocess.Popen(["python", "server/app.py"])
 
 # Open the web page in a new browser tab
-# webbrowser.open("http://localhost:5000")
+webbrowser.open("http://localhost:5000")
 
 # Wait for the servers to finish
 action_server.wait()
