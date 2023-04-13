@@ -18,3 +18,6 @@
 
 # 开启 api 服务器
 `rasa run --enable-api --cors "*" --debug`
+
+# 查看DIET训练日志
+`tensorboard --logdir ./log `
