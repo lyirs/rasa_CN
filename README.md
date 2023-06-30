@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/rasa-3.5-blue)
+![Static Badge](https://img.shields.io/badge/rasa-3.5-blue?link=https%3A%2F%2Fgithub.com%2FRasaHQ%2Frasa)
 ![Static Badge](https://img.shields.io/badge/python-3.8-orange)
 
 # 训练
