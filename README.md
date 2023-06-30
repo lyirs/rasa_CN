@@ -1,23 +1,88 @@
+<h1 align="center">基于RASA的中文任务型机器人</h1>
+<div align="center">
+
 [![Static Badge](https://img.shields.io/badge/rasa-3.5-blue)](https://github.com/RasaHQ/rasa)
 ![Static Badge](https://img.shields.io/badge/python-3.8-orange)
 
-# 训练
+</div>
+
+<div align="center">
+
+2022/6/8 后 rasa-x 不再免费 直接安装 rasa 即可
+
+</div>
+
+<hr />
+
+<h3 align="center">
+
+💡 **文件说明** 💡
+
+</h3>
+
+| 文件         | 描述                                                                                     |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| actions      | 自定义动作服务器                                                                         |
+| components   | 自定义组件                                                                               |
+| data/nlu     | Rasa NLU 的训练数据                                                                      |
+| data/rules   | Rasa 规则数据                                                                            |
+| data/stories | Rasa 故事数据                                                                            |
+| domain       | 领域指定了 rasa 应该知道的意图、实体、插槽、响应、表单和动作。它还定义了会话会话的配置。 |
+| models       | 训练的模型数据                                                                           |
+| pipline      | 流水线组件配置                                                                           |
+| server       | 前后端服务                                                                               |
+| source       | RASA 源代码，只是用来调试 DIET 的*(:з」∠)*                                               |
+| .env         | 相关环境变量，主要用于 API                                                               |
+
+<hr/>
+
+<h3 align="center">
+
+💡 **目前的功能** 💡
+
+</h3>
+
+| 功能   | 描述       | API 来源                               |
+| ------ | ---------- | -------------------------------------- |
+| 闲聊   | 简易打招呼 |                                        |
+| 任务型 | 查询天气   | [心知天气](https://www.seniverse.com/) |
+| 任务型 | 查询快递   | [快递网](http://www.kuaidi.com/)       |
+
+<hr/>
+
+<h3 align="center">
+
+💡 **基本使用** 💡
+
+</h3>
+
+## 依赖安装
+
+`pip install -r requirements.txt`
+
+## 训练
 
 `rasa train --domain domain`
 
-## 多线程训练
+### 多线程训练
 
 `rasa train --domain domain --num-threads 12`
 
-# 开启 action 服务器
+## 开启 action 服务器
 
 `rasa run actions`
 
-# 使用
+## 使用
 
 `rasa shell`
 
-# 其他命令
+<hr />
+
+<h3 align="center">
+
+💡 **其他命令** 💡
+
+</h3>
 
 ### 查看模型从文本中提取的意图和实体
 
@@ -55,8 +120,65 @@
 
 `tensorboard --logdir ./log `
 
-# 简单前端界面
+<hr />
+
+<h3 align="center">
+
+💡 **简单前端页面** 💡
+
+</h3>
 
 `python server/start_services.py `
 
 功能多一点的：[rasa 简易前端](https://github.com/lyirs/rasa_web)
+
+<hr />
+
+<h3 align="center">
+
+💡 **推荐使用 python 虚拟环境进行管理** 💡
+
+</h3>
+
+<div align="center">
+
+[![Static Badge](https://img.shields.io/badge/Miniconda-blue)](https://conda.io/en/latest/miniconda.html)
+
+</div>
+
+### 创建 python 虚拟环境
+
+`conda create -n py38_rasa python=3.8`
+
+### 激活虚拟环境
+
+`conda activate py38_rasa`
+
+<hr />
+
+<h3 align="center">
+
+📚 **问题** 📚
+
+</h3>
+
+- 有些依赖库需要 Microsoft Visual C++ 14.0 以上的环境 可在 visual studio 中进行安装
+  ,或使用 Microsoft C++ Build Tools [![Static Badge](https://img.shields.io/badge/visual_cpp_build_tools-blue)](https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/)
+
+- 安装速渡过慢
+
+```
+pip install -i https://pypi.douban.com/simple module # 使用豆瓣源
+pip install -i http://mirrors.aliyun.com/pypi/simple/ module # 阿里云
+pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ module # 中国科技大
+pip install -i http://pypi.douban.com/simple/ module # 豆瓣(douban)
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ module # 清华大学
+pip install -i http://pypi.mirrors.ustc.edu.cn/simple/ module # 中国科学技术大学
+```
+
+- fatal: unable to access ‘https://github.com/xxx‘: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connecti-
+
+```
+git config --global --add remote.origin.proxy ""
+git config --global http.sslBackend "openssl"
+```
