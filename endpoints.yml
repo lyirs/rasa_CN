@@ -32,6 +32,10 @@ action_endpoint:
 #    username: <username used for authentication>
 #    password: <password used for authentication>
 
+tracker_store:
+  type: SQL
+  dialect: "sqlite"
+  db: "tracker_store.db"
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
 

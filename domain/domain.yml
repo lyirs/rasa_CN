@@ -5,36 +5,18 @@ intents:
   - goodbye
   - affirm
   - deny
+  - stop
   - mood_great
   - mood_unhappy
   - bot_challenge
-  # 测试
-  - bot_first_scene
-  - bot_first_slot
 
-# ##################################################
-# entities
-# ##################################################
-entities:
-  - fslot
-# ##################################################
-# slots
-# ##################################################
-slots:
-  # 测试
-  firstslot:
-    type: text
-    initial_value: null
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: fslot
 # ##################################################
 # responses
 # ##################################################
 responses:
   utter_greet:
     - text: Hey! How are you?
+    - text: 你好啊~
   utter_cheer_up:
     - image: https://i.imgur.com/nGF1K8f.jpg
       text: "Here is something to cheer you up:"
@@ -45,30 +27,31 @@ responses:
   utter_goodbye:
     - text: 再见~
   utter_iamabot:
-    - text: 我是人工智能。
+    - text: 你猜~
   # 测试
-  utter_ask_firstslot:
-    - text: 这是一个slot插槽
-  utter_stop_slot:
-    - text: 关于{firstslot}信息结束。
+  utter_bot_buttons:
+    - text: 您想要执行哪个操作？
+      buttons:
+        - title: "great"
+          payload: "/mood_great"
+        - title: "super sad"
+          payload: "/mood_unhappy"
   # default
   utter_default:
-    - text: 没有听懂~
+    - text: 抱歉，我没有明白您的意思。请尝试用其他方式描述您的问题。
+    - text: 对不起，我没能理解您的问题。请重新表述一下您的问题。
+    - text: 不好意思，我无法理解您的问题。请提供更多详细信息以便我帮助您。
+  utter_ask_affirmation:
+    - text: "我不太确定我理解您的问题。您是否可以确认一下我是否理解正确？"
+  utter_ask_rephrase:
+    - text: "请尝试用其他方式描述您的问题。"
+
 # ##################################################
 # actions
 # ##################################################
 actions:
   - action_hello_world
-  - action_slot
-
-# ##################################################
-# 表单
-# ##################################################
-forms:
-  # 测试表单
-  action_slot_form:
-    required_slots:
-      - firstslot
+  - action_context_sensitive_error
 
 session_config:
   session_expiration_time: 60

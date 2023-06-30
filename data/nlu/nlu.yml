@@ -1,82 +1,81 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - 你好
-    - 你好啊
-    - 早上好
-    - 晚上好
-    - hello
-    - hi
-    - 嗨
-    - 嗨喽
-    - 见到你很高兴
-    - 嘿
-    - 早
-    - 上午好
-    - hello哈喽
-    - 哈喽哈喽
-    - hello hello
-    - 喂喂
-    - 在不
-    - 在不在
-- intent: goodbye
-  examples: |
-    - goodbye
-    - bye
-    - bye bye
-    - 88
-    - 886
-    - 再见
-    - 拜
-    - 拜拜
-    - 拜拜，下次再聊
-    - 下次见
-    - 回头见
-    - 下次再见
-    - 下次再聊
-    - 有空再聊
-    - 先这样吧
-    - 好了，就说这么多了
-    - 好了，先这样
-    - 没事
-- intent: affirm
-  examples: |
-    - 是
-    - 正确
-- intent: deny
-  examples: |
-    - 不
-    - no
-    - 不可以
-    - 不是的
-    - 不认同
-    - 否定
-    - 不是这样子的
-    - 我不同意你的观点
-    - 不同意
-    - 不好
-    - 拒绝
-    - 不行
-- intent: mood_great
-  examples: |
-    - 完美
-    - 好
-- intent: mood_unhappy
-  examples: |
-    - 难受
-    - 我很伤心
-- intent: bot_challenge
-  examples: |
-    - 你是人类吗？
-    - 你是机器人吗？
-- intent: bot_first_scene
-  examples: |
-    - 你好世界
-    - hello world
-- intent: bot_first_slot
-  examples: |
-    - 测试slot
-    - [slot](fslot)
-    - 我想知道[slot](fslot)的信息
+  - intent: greet
+    examples: |
+      - 你好
+      - 你好啊
+      - 早上好
+      - 晚上好
+      - hello
+      - hi
+      - 嗨
+      - 嗨喽
+      - 见到你很高兴
+      - 嘿
+      - 早
+      - 上午好
+      - hello哈喽
+      - 哈喽哈喽
+      - hello hello
+      - 喂喂
+      - 在不
+      - 在不在
+  - intent: goodbye
+    examples: |
+      - goodbye
+      - bye
+      - bye bye
+      - 88
+      - 886
+      - 再见
+      - 拜
+      - 拜拜
+      - 拜拜，下次再聊
+      - 下次见
+      - 回头见
+      - 下次再见
+      - 下次再聊
+      - 有空再聊
+      - 先这样吧
+      - 好了，就说这么多了
+      - 好了，先这样
+      - 没事
+  - intent: affirm
+    examples: |
+      - 是
+      - 正确
+  - intent: deny
+    examples: |
+      - 不
+      - no
+      - 不可以
+      - 不是的
+      - 不认同
+      - 否定
+      - 不是这样子的
+      - 我不同意你的观点
+      - 不同意
+      - 不好
+      - 拒绝
+      - 不行
+  - intent: mood_great
+    examples: |
+      - 完美
+      - 好
+  - intent: mood_unhappy
+    examples: |
+      - 难受
+      - 我很伤心
+  - intent: bot_challenge
+    examples: |
+      - 你是人类吗？
+      - 你是机器人吗？
+  - intent: bot_first_scene
+    examples: |
+      - 你好世界
+      - hello world
+  - intent: stop
+    examples: |
+      - 停
+      - 停止

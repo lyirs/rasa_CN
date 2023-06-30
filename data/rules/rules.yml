@@ -1,33 +1,12 @@
 version: "3.1"
 
 rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
-# ##################################################
-# 测试表单
-# ##################################################
-- rule: Activate slot Form
-  steps:
-  - intent: bot_first_slot
-  - action: action_slot_form
-  - active_loop: action_slot_form
-
-- rule: Submit slot form
-  condition:
-    - active_loop: action_slot_form
-  steps:
-    - action: action_slot_form
-    - active_loop: null
-    - slot_was_set:
-      - requested_slot: null
-    - action: action_slot
-    - action: utter_stop_slot
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
