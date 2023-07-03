@@ -22,7 +22,7 @@ pipeline:
     dictionary_path: "pipline/jieba_userdict"
   - name: LanguageModelFeaturizer
     model_name: "bert"
-    model_weights: "bert-base-chinese"
+    model_weights: "pipline/bert-base-chinese"
   - name: RegexFeaturizer
   - name: components.custom_number_extractor.CustomNumberExtractor
   - name: components.custom_time_extractor.CustomTimeExtractor

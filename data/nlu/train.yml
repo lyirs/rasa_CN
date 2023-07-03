@@ -1,0 +1,28 @@
+version: "3.1"
+nlu:
+  - intent: train_ticket
+    examples: |
+      - 查寻[上海]{"entity": "address", "role": "departure"}到[北京]{"entity": "address", "role": "destination"}的火车票
+      - 帮我查一下[明天](date-time)去[郑州]{"entity": "address", "role": "destination"}的火车票
+      - 查询[广州]{"entity": "address", "role": "departure"}到[北京]{"entity": "address", "role": "destination"}的火车
+      - 从[广州]{"entity": "address", "role": "departure"}到[南昌]{"entity": "address", "role": "destination"}的火车票时刻表
+      - 查一下从[杭州]{"entity": "address", "role": "departure"}到[上海]{"entity": "address", "role": "destination"}高铁时刻表
+      - 查一下从[广州]{"entity": "address", "role": "departure"}到[南宁]{"entity": "address", "role": "destination"}的火车票
+      - 有没有[徐州]{"entity": "address", "role": "departure"}到[洛阳]{"entity": "address", "role": "destination"}的火车票
+      - 查询[临沂]{"entity": "address", "role": "departure"}到[济南]{"entity": "address", "role": "destination"}的火车票
+      - [连云港]{"entity": "address", "role": "departure"}到[徐州]{"entity": "address", "role": "destination"}的火车票
+      - [开封]{"entity": "address", "role": "departure"}到[信阳]{"entity": "address", "role": "destination"}的火车
+      - 帮我查下[上海]{"entity": "address", "role": "departure"}到[合肥]{"entity": "address", "role": "destination"}的火车
+      - 帮我查一下[宁波]{"entity": "address", "role": "departure"}到[郑州]{"entity": "address", "role": "destination"}的火车
+      - [星期四](date-time)去[上海]{"entity": "address", "role": "destination"}的火车
+      - [重庆]{"entity": "address", "role": "departure"}到[成都]{"entity": "address", "role": "destination"}的火车票多少钱
+      - 从[余姚]{"entity": "address", "role": "departure"}到[贵阳]{"entity": "address", "role": "destination"}的火车票
+      - [北京]{"entity": "address", "role": "departure"}到[上海]{"entity": "address", "role": "destination"}的火车票
+      - 查询[湛江]{"entity": "address", "role": "departure"}到[广州]{"entity": "address", "role": "destination"}的火车票
+      - 查一下[明天](date-time)下午[南通]{"entity": "address", "role": "departure"}到[南京]{"entity": "address", "role": "destination"}的火车票
+      - 帮我查一下从[开封]{"entity": "address", "role": "departure"}到[郑州]{"entity": "address", "role": "destination"}的火车几点发
+      - [烟台]{"entity": "address", "role": "departure"}到[齐齐哈尔]{"entity": "address", "role": "destination"}的火车票
+      - 查询[广州]{"entity": "address", "role": "departure"}到[贵港]{"entity": "address", "role": "destination"}的火车
+      - 去[南昌]{"entity": "address", "role": "destination"}的火车
+      - [杭州]{"entity": "address", "role": "departure"}到[北京]{"entity": "address", "role": "destination"}的火车班次
+      - [明天](date-time)[广州]{"entity": "address", "role": "departure"}到[长葛]{"entity": "address", "role": "destination"}的火车

@@ -17,6 +17,7 @@ responses:
   utter_greet:
     - text: Hey! How are you?
     - text: 你好啊~
+    - text: 我挺好的，你呢
   utter_cheer_up:
     - image: https://i.imgur.com/nGF1K8f.jpg
       text: "Here is something to cheer you up:"

@@ -1,0 +1,28 @@
+version: "3.1"
+stories:
+  - story: train dorm
+    steps:
+      - or:
+          - intent: train_ticket
+          - intent: train_ticket
+            entities:
+              - address: 上海
+                role: departure
+          - intent: train_ticket
+            entities:
+              - address: 北京
+                role: destination
+          - intent: train_ticket
+            entities:
+              - date-time: 明天
+              - address: 上海
+                role: departure
+              - address: 北京
+                role: destination
+      - action: train_query_form
+      - active_loop: train_query_form
+      - intent: stop
+      - action: utter_ask_continue
+      - intent: deny
+      - action: action_deactivate_loop
+      - active_loop: null

@@ -21,6 +21,7 @@ nlu:
       - 喂喂
       - 在不
       - 在不在
+      - 早上好，你好吗?
   - intent: goodbye
     examples: |
       - goodbye

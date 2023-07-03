@@ -1,6 +1,6 @@
 version: "3.1"
 nlu:
-  - lookup: cities
+  - lookup: address
     examples: |
       - 江宁区
       - 常德市西洞庭管理区

@@ -7,7 +7,6 @@ intents:
   - info_date
   - info_address
 entities:
-  - address
   - date-time
 slots:
   address:
@@ -26,7 +25,7 @@ responses:
   utter_ask_address:
     - text: 想查询哪里的天气呢？
   utter_ask_date-time:
-    - text: 想查询什么时候的天气呢？
+    - text: 想查询什么时候的呢？
   utter_ask_continue:
     - text: 是否要继续？
 actions:

@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+  - rule: activate train query form
+    steps:
+      - intent: train_ticket
+      - action: train_query_form
+      - active_loop: train_query_form
+
+  - rule: Submit train query form
+    condition:
+      # Condition that form is active.
+      - active_loop: train_query_form
+    steps:
+      - action: train_query_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The action we want to run when the form is submitted.
+      - action: action_query_train

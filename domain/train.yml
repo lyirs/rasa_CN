@@ -1,0 +1,42 @@
+version: "3.1"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - train_ticket
+
+entities:
+  - address:
+      roles:
+        - departure
+        - destination
+
+slots:
+  departure:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: address
+        role: departure
+  destination:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: address
+        role: destination
+
+responses:
+  utter_ask_departure:
+    - text: "你想从哪里出发？"
+  utter_ask_destination:
+    - text: "你要去哪里？"
+
+actions:
+  - action_query_train
+
+forms:
+  train_query_form:
+    required_slots:
+      - departure
+      - destination
+      - date-time
