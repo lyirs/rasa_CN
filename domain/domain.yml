@@ -9,6 +9,8 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - chitchat
+  - faq
 
 # ##################################################
 # responses
@@ -52,7 +54,6 @@ responses:
 # ##################################################
 actions:
   - action_hello_world
-  - action_context_sensitive_error
 
 session_config:
   session_expiration_time: 60

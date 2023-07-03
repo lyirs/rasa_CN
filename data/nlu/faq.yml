@@ -1,0 +1,10 @@
+version: "3.1"
+nlu:
+  - intent: faq/machine_learning
+    examples: |
+      - 什么是机器学习
+      - 机器学习
+  - intent: faq/deep_learning
+    examples: |
+      - 什么是深度学习
+      - 深度学习

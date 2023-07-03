@@ -1,0 +1,10 @@
+version: "3.1"
+nlu:
+  - intent: chitchat/favorite_food
+    examples: |
+      - 你喜欢什么食物
+      - 喜欢的食物
+  - intent: chitchat/favorite_drink
+    examples: |
+      - 你喜欢什么饮料
+      - 喜欢的饮料

@@ -93,6 +93,10 @@
 
 `rasa interactive --domain domain`
 
+### 故事可视化
+
+`rasa visulize`
+
 ### 验证数据
 
 `rasa data validate`

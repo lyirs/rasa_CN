@@ -1,0 +1,6 @@
+version: "3.1"
+rules:
+  - rule: fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_ask_rephrase

@@ -1,0 +1,6 @@
+version: "3.1"
+responses:
+  utter_faq/machine_learning:
+    - text: 机器学习(Machine Learning, ML)是一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、算法复杂度理论等多门学科。专门研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能。
+  utter_faq/deep_learning:
+    - text: 深度学习（deep learning）是机器学习的分支，是一种以人工神经网络为架构，对数据进行表征学习的算法。

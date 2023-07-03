@@ -72,6 +72,7 @@ nlu:
     examples: |
       - 你是人类吗？
       - 你是机器人吗？
+      - 你是谁？
   - intent: bot_first_scene
     examples: |
       - 你好世界
