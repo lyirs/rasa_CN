@@ -110,7 +110,7 @@ def text_to_date(text_date: str) -> Optional[datetime.date]:
         return None
 
 
-class WeatherFormAction(Action):
+class ActionWeatherForm(Action):
     def name(self) -> Text:
         return "action_weather_form_submit"
 

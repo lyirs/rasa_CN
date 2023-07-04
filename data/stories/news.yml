@@ -1,0 +1,7 @@
+version: "3.1"
+
+stories:
+  - story: get news
+    steps:
+      - intent: get_news
+      - action: action_get_news
