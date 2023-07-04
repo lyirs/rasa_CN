@@ -48,6 +48,7 @@
 | 任务型 | 查询天气   | [心知天气](https://www.seniverse.com/) | -        |
 | 任务型 | 查询快递   | [快递网](http://www.kuaidi.com/)       | -        |
 | 任务型 | 查询车票   | [12306](https://kyfw.12306.cn/)        | smp2019  |
+| 任务型 | 查询新闻   | [聚合](https://www.juhe.cn/)           | -        |
 
 <hr/>
 
