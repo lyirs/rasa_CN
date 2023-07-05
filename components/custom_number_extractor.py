@@ -9,6 +9,7 @@ from rasa.shared.nlu.constants import ENTITIES, TEXT
 from rasa.nlu.extractors.extractor import EntityExtractorMixin
 from rasa.shared.nlu.training_data.message import Message
 
+
 @DefaultV1Recipe.register(
     DefaultV1Recipe.ComponentType.ENTITY_EXTRACTOR,
     is_trainable=False
@@ -20,7 +21,7 @@ class CustomNumberExtractor(GraphComponent, EntityExtractorMixin):
     def get_default_config() -> Dict[Text, Any]:
         """The component's default config."""
         return {
-            "number_pattern": r'\b\d+\b'
+            "number_pattern": r'\b\d+'
         }
 
     def __init__(self, config: Dict[Text, Any]) -> None:
@@ -61,7 +62,7 @@ class CustomNumberExtractor(GraphComponent, EntityExtractorMixin):
                     "entity": "number",
                     "value": value,
                     "start": start,
-                    "confidence": None,
+                    "confidence": 75,
                     "end": end,
                     "extractor": "CustomNumberExtractor",
 

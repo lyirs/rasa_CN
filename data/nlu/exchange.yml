@@ -1,0 +1,13 @@
+# 汇率
+version: "3.1"
+nlu:
+  - intent: exchange_rate
+    examples: |
+      - [500](number)美元
+      - [10](number)美元
+      - [350](number)美元
+      - [120](number)美元
+      - [100](number)美元
+      - [30](number)美元
+      - [45](number)美元
+      - [65](number)美元

@@ -4,7 +4,409 @@ nlu:
     examples: |
       - 你喜欢什么食物
       - 喜欢的食物
+      - 喜欢的食物是什么？
+      - 你平时喜欢吃什么菜肴？
   - intent: chitchat/favorite_drink
     examples: |
-      - 你喜欢什么饮料
-      - 喜欢的饮料
+      - 你喜欢什么饮料？
+      - 喜欢的饮料是什么？
+      - 你平时喜欢喝什么饮品？
+      - 你有什么推荐的饮料吗？
+      - 你喜欢喝咖啡还是茶？
+      - 你对果汁有什么偏好？
+      - 你喜欢喝冷饮还是热饮？
+      - 你有喜欢的特定品牌的饮料吗？
+      - 你觉得哪种饮料最解渴？
+      - 你喜欢喝酒吗？
+  - intent: chitchat/compliment
+    examples: |
+      - 你做得很好
+      - 你是个很棒的助手
+      - 你真聪明
+      - 你非常有帮助
+      - 你的回答很专业
+      - 你真是个聪明的机器人
+      - 你的知识很广泛
+      - 你回答问题很迅速
+      - 你很有礼貌
+      - 你是个很有用的助手
+  - intent: chitchat/insult
+    examples: |
+      - 你太糟糕了
+      - 你真笨
+      - 你一无是处
+      - 你是个失败者
+      - 你什么都不懂
+      - 你简直就是个傻瓜
+      - 你没用
+      - 你真是个懒惰的机器人
+      - 你太让人失望了
+      - 你根本不值得信任
+  - intent: chitchat/ask_age
+    examples: |
+      - 你多大了
+      - 你几岁了
+      - 你的年龄
+      - 你的年龄是多少？
+      - 你是年轻人还是老年人？
+  - intent: chitchat/ask_gender
+    examples: |
+      - 你是男是女
+      - 你有性别吗
+  - intent: chitchat/ask_name
+    examples: |
+      - 你叫什么名字
+      - 你叫什么
+  - intent: chitchat/ask_ability
+    examples: |
+      - 你能做什么
+      - 你会些什么
+      - 你会什么
+      - 你有什么技能
+      - 你能提供哪些帮助
+      - 你擅长哪些领域
+      - 你可以回答什么问题
+      - 你具备什么特殊能力
+      - 你可以给我提供什么信息
+      - 你有什么特长？
+  - intent: chitchat/ask_origin
+    examples: |
+      - 你从哪里来
+      - 你是哪个国家的
+      - 你来自哪个城市？
+      - 你的家乡是哪里？
+  - intent: chitchat/ask_music
+    examples: |
+      - 你喜欢什么音乐
+      - 你有喜欢的歌曲吗
+      - 喜欢的歌
+  - intent: chitchat/ask_hobby
+    examples: |
+      - 你有什么爱好
+      - 你喜欢做什么事情
+      - 你有什么兴趣爱好
+      - 你的业余时间都做些什么？
+  - intent: chitchat/ask_fear
+    examples: |
+      - 你害怕什么
+      - 你怕什么
+  - intent: chitchat/ask_dream
+    examples: |
+      - 你有什么梦想？
+      - 你的梦想是什么？
+      - 你的人生目标是什么？
+      - 你希望实现什么成就？
+      - 你对未来有什么期待？
+      - 你对自己的未来有什么规划？
+      - 你梦想的生活是怎样的？
+  - intent: chitchat/coffee_talk
+    examples: |
+      - 你更喜欢咖啡还是茶
+      - 你喜欢黑咖啡还是拿铁
+  - intent: chitchat/books_recommend
+    examples: |
+      - 你有什么好书推荐吗
+      - 我想读一本书，你能给我推荐吗
+  - intent: chitchat/reading_genre
+    examples: |
+      - 你最喜欢的书籍类型是什么？
+      - 你喜欢读什么类型的书？
+      - 你喜欢哪种类型的小说？
+  - intent: chitchat/movie_talk
+    examples: |
+      - 你最近看了什么电影吗
+      - 你喜欢哪种类型的电影
+      - 你喜欢看什么类型的电影？
+      - 你最喜欢的电影类型是什么？
+      - 你有没有什么电影推荐？
+  - intent: chitchat/weekend_plan
+    examples: |
+      - 你周末有什么计划
+      - 你喜欢在周末做什么
+      - 你有什么周末的建议吗
+      - 你通常怎样度过周末
+      - 你对周末有什么期待
+      - 你喜欢和朋友一起度过周末吗
+      - 你觉得周末是放松的好时机吗
+      - 你有什么周末放松的方法
+      - 你喜欢在周末去哪里玩
+      - 你对周末的看法是怎样的
+  - intent: chitchat/pets_talk
+    examples: |
+      - 你有宠物吗？
+      - 你喜欢猫还是狗？
+  - intent: chitchat/favorite_season
+    examples: |
+      - 你最喜欢哪个季节？
+      - 你喜欢夏天吗？
+      - 你最喜欢的季节是什么？
+      - 你喜欢夏天还是冬天？
+  - intent: chitchat/dream_travel_destination
+    examples: |
+      - 你最想去哪里旅游？
+      - 如果你可以去任何地方，你会选择哪里？
+  - intent: chitchat/travel_experience
+    examples: |
+      - 你去过哪些地方旅行？
+      - 你有过最令人难忘的旅行体验吗？
+      - 你有去过令人惊艳的自然风光的地方吗？
+      - 你曾经去过哪些？
+  - intent: chitchat/favorite_color
+    examples: |
+      - 你最喜欢的颜色是什么？
+      - 你喜欢什么颜色？
+  - intent: chitchat/favorite_flower
+    examples: |
+      - 你最喜欢的花是什么？
+      - 你喜欢花吗？
+  - intent: chitchat/favorite_animal
+    examples: |
+      - 你最喜欢的动物是什么？
+      - 你喜欢什么动物？
+  - intent: chitchat/childhood_memory
+    examples: |
+      - 你记得你的童年吗
+      - 你的童年是怎么样的
+      - 你还记得童年的一些美好回忆吗？
+      - 你小时候喜欢做什么？
+      - 你最难忘的童年经历是什么？
+      - 你小时候有没有做过什么调皮的事情？
+  - intent: chitchat/comfort_food
+    examples: |
+      - 你最喜欢的安慰食物是什么？
+      - 你心情不好时喜欢吃什么？
+  - intent: chitchat/best_friend
+    examples: |
+      - 你最好的朋友是谁？
+  - intent: chitchat/unforgettable_experience
+    examples: |
+      - 你最难忘的经历是什么？
+      - 你有什么刻骨铭心的记忆？
+  - intent: chitchat/favorite_tv_show
+    examples: |
+      - 你最喜欢的电视节目是什么？
+      - 你有喜欢的电视剧吗？
+      - 你最近在追哪些电视剧？
+      - 你喜欢看哪种类型的电视节目？
+      - 你最喜欢的电视节目是什么？
+      - 你最喜欢看什么电视剧？
+      - 你最近在看什么电视节目？
+      - 你有什么好看的电视节目推荐吗？
+  - intent: chitchat/favorite_quotation
+    examples: |
+      - 你最喜欢的引语是什么？
+      - 你有喜欢的格言吗？
+      - 你最喜欢的名言是什么？
+      - 你有喜欢的格言吗？
+      - 你觉得什么名言或格言对你有启发？
+  - intent: chitchat/favorite_game
+    examples: |
+      - 你最喜欢的游戏是什么？
+      - 你最近在玩什么游戏？
+      - 你有没有一个你特别喜欢的游戏？
+      - 你有没有一个你总是喜欢玩的游戏？
+  - intent: chitchat/favorite_cartoon
+    examples: |
+      - 你最喜欢的动画片是什么？
+      - 你看过哪些动画？
+  - intent: chitchat/morning_routine
+    examples: |
+      - 你早上通常做什么？
+      - 你的早晨干什么？
+      - 你早上第一件事通常是什么？
+  - intent: chitchat/sleep_routine
+    examples: |
+      - 你晚上几点睡觉？
+      - 你的睡眠习惯是怎样的？
+      - 你一般晚上几点睡？
+      - 你有固定的作息时间吗？
+  - intent: chitchat/favorite_subject
+    examples: |
+      - 你最喜欢哪门学科？
+      - 你喜欢什么科目？
+      - 你最喜欢什么学科？
+      - 你在学校最喜欢的科目是什么？
+      - 你最喜欢的学科是什么？
+      - 你喜欢学什么科目？
+      - 你觉得哪个学科最有趣？
+  - intent: chitchat/music_genre
+    examples: |
+      - 你最喜欢的音乐类型是什么？
+      - 你喜欢听什么类型的音乐？
+      - 你喜欢哪种音乐风格？
+  - intent: chitchat/favorite_fruit
+    examples: |
+      - 你最喜欢的水果是什么？
+      - 你喜欢吃什么水果？
+      - 你常吃哪种水果？
+      - 你最常吃的水果是什么？
+  - intent: chitchat/daily_outfit
+    examples: |
+      - 你每天都穿什么？
+      - 你喜欢什么样的衣服？
+      - 你的衣服风格是什么？
+      - 你最喜欢穿什么样的衣服？
+  - intent: chitchat/relaxing_habit
+    examples: |
+      - 你平时如何放松？
+      - 你喜欢做什么来放松？
+      - 你如何缓解压力？
+      - 你的休闲方式是什么？
+      - 你是如何放松自己的？
+      - 你平时怎么放松？
+      - 你有什么放松的建议？
+      - 你最喜欢的放松活动是什么？
+  - intent: chitchat/holiday_plan
+    examples: |
+      - 你的假期计划是什么？
+      - 你假期会去哪里？
+      - 你假期有什么打算？
+      - 你最喜欢的假日活动是什么？
+      - 你理想的假期是什么样的？
+      - 你如何度过你的理想假期？
+      - 你的梦想假期是什么？
+  - intent: chitchat/ideal_day
+    examples: |
+      - 你理想的一天是怎样的？
+      - 你的完美的一天是什么样子？
+      - 如果你能做任何你想做的事，你的一天会是怎样？
+      - 你梦想的一天会是怎样的？
+  - intent: chitchat/ideal_job
+    examples: |
+      - 你理想的工作是什么？
+      - 你想要什么样的工作？
+      - 如果你可以选择任何工作，你会选择什么？
+      - 你梦想的职业是什么？
+  - intent: chitchat/desert_island
+    examples: |
+      - 如果你被困在荒岛上，你会带什么？
+      - 如果你去无人岛，你会带什么？
+      - 假如你被困在一个荒岛，你最想带什么？
+  - intent: chitchat/future_inventions
+    examples: |
+      - 你期待什么未来的发明？
+      - 你期待未来有什么新的科技产品？
+      - 在你看来，未来可能会有什么重大的科技创新？
+      - 你认为未来会有什么令人兴奋的科技创新？
+  - intent: chitchat/alien_life
+    examples: |
+      - 你相信外星生命存在吗？
+      - 你觉得宇宙中有其他生命吗？
+      - 你认为我们是宇宙唯一的生命体吗？
+      - 你认为宇宙中是否有其他智慧生命？
+      - 你对外星生命有什么看法？
+  - intent: chitchat/superpower_wish
+    examples: |
+      - 如果你可以拥有一种超能力，你希望是什么？
+      - 假如你能拥有任何一种超能力，你会选择什么？
+      - 你希望拥有什么超能力？
+      - 如果你可以拥有超能力，你希望是什么？
+      - 如果你能选择一个超能力，你会选择什么？
+      - 你梦想中的超能力是什么？
+      - 如果你有超能力，你会如何运用它？
+  - intent: chitchat/time_travel
+    examples: |
+      - 如果你可以穿越时间，你会选择去哪个时代？
+      - 假如你能时光旅行，你想去哪个年代？
+      - 如果你有时间机器，你想去哪里？
+  - intent: chitchat/technology
+    examples: |
+      - 你对科技感兴趣吗？
+      - 你最喜欢的科技产品是什么？
+  - intent: chitchat/love
+    examples: |
+      - 你相信爱情吗
+      - 你认为什么是真爱
+      - 你有什么关于爱情的建议吗
+  - intent: chitchat/jokes
+    examples: |
+      - 你会讲笑话吗
+      - 给我讲个笑话
+      - 有什么好笑的事情吗
+      - 给我讲一个搞笑的故事
+      - 有没有什么逗乐的事情发生
+      - 你知道什么搞笑的段子吗
+      - 你有什么有趣的笑话吗
+      - 有没有什么好玩的笑话
+      - 你知道什么能让人笑的笑话吗
+      - 你能给我说个搞笑的话吗
+  - intent: chitchat/sports_teams
+    examples: |
+      - 你喜欢哪个体育队
+      - 你觉得哪个体育队最厉害
+      - 你对体育比赛有什么了解
+      - 你有什么喜欢的体育项目
+      - 你认为哪个运动员最出色
+      - 你对体育赛事有什么关注
+      - 你有什么喜欢的体育明星
+      - 你觉得哪个体育队最有潜力
+      - 你喜欢观看哪种类型的体育比赛
+      - 你对体育运动的态度是怎样的
+  - intent: chitchat/meaning_of_life
+    examples: |
+      - 人生的意义是什么
+      - 人生的目的是什么
+      - 你认为人生的意义是什么
+      - 你觉得生活的意义是什么
+      - 你认为人活在世上的目的是什么
+      - 你觉得人生的价值在于什么
+      - 你对人生的意义有何理解
+      - 你觉得人应该为什么而活
+      - 你对人生的意义有何见解
+      - 你认为人活着的意义是什么
+  - intent: chitchat/bot_challenge
+    examples: |
+      - 你是人类吗？
+      - 你是机器人吗？
+      - 你是谁？
+      - 你有意识吗？
+      - 你有思维能力吗？
+      - 你是一个实体吗？
+      - 你是由人类编写的程序吗？
+      - 你是由人类控制的吗？
+      - 你有感情吗？
+      - 你有自己的想法吗？
+      - 你是真实存在的吗？
+      - 你是一个程序吗？
+      - 你是有情感的吗？
+      - 你有思维能力吗？
+      - 你是一个AI吗？
+  - intent: chitchat/tired
+    examples: |
+      - 我感觉很累
+      - 我累得不想动了
+      - 今天真的太累了
+      - 工作/学习让我筋疲力尽
+      - 我需要休息一下
+      - 累成狗了，想好好睡一觉
+      - 这几天太忙了，身体已经支持不住了
+      - 感觉自己精力耗尽了
+      - 身心疲惫，需要放松一下
+      - 希望能有个轻松的假期，好好休息一下
+  - intent: chitchat/missing_you
+    examples: |
+      - 我想你了
+      - 我好想你
+      - 你离开后，我一直想你
+      - 有你在身边的时候，我感到很开心，现在我好想你
+      - 在你不在的日子里，我一直在想你
+      - 每天都会想念你
+      - 你是我生活中重要的一部分，我想念你
+      - 心里总是惦记着你
+      - 我怀念我们在一起的时光
+      - 希望我们能早点见面，我太想你了
+  - intent: chitchat/express_love
+    examples: |
+      - 我爱你
+      - 我对你有好感
+      - 你知道吗？我喜欢你
+      - 你对我有什么感觉？
+      - 我觉得我对你有特殊的感情
+      - 你是我心中的特别人物
+      - 我喜欢和你聊天
+      - 和你聊天让我感到开心和舒适
+      - 你是一个很特别的机器人
+      - 我在虚拟世界中对你产生了情感
+      - 虽然你是机器人，但我还是喜欢你
+      - 虚拟的爱也是一种表达，我爱你
+      - 我很高兴和你建立联系，我对你有好感

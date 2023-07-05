@@ -4,7 +4,6 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
 import os
 from typing import Any, Text, Dict, List
 
@@ -14,23 +13,23 @@ import requests
 from typing import Any, Dict, List, Text, Optional
 
 
-class ActionNews(Action):
+class ActionExchangeRate(Action):
 
     def name(self) -> Text:
-        return "action_get_news"
+        return "action_exchange_rate"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        number = tracker.slots.get("number")
         # 发起 GET 请求
-        url = 'http://v.juhe.cn/toutiao/index'
+        url = 'http://op.juhe.cn/onebox/exchange/currency'
         params = {
-            'key': os.getenv("NEWS_KEY", ""),
-            'type': 'top',
-            'page': 1,
-            'page_size': 10,
-            'is_filter': 1
+            'key': os.getenv("Exchange_KEY", ""),
+            'from': 'USD',
+            'to': 'CNY',
+            'version': 2,
         }
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -42,16 +41,12 @@ class ActionNews(Action):
             return []
 
         data = response.json()
+        result = float(data['result'][0]['result'])
+        result = float(number) * result  # type: ignore
+        result = round(result, 2)
 
-        info_list = []  #
-        for new_data in data['result']['data']:
-            title = new_data['title']
-            author = new_data['author_name']
-            date = new_data['date']
-            info_list.append(
-                f"{title}(来源：{author})[{date}]")
+        info = f"当前汇率：{data['result'][0]['exchange']}\n(结果：{result})]"
 
-        dispatcher.utter_message(
-            text='\n'.join(info_list))
+        dispatcher.utter_message(text=info)
 
         return []

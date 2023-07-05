@@ -8,7 +8,6 @@ intents:
   - stop
   - mood_great
   - mood_unhappy
-  - bot_challenge
   - chitchat
   - faq
 
@@ -29,8 +28,6 @@ responses:
     - text: 好啊，来吧！
   utter_goodbye:
     - text: 再见~
-  utter_iamabot:
-    - text: 你猜~
   # 测试
   utter_bot_buttons:
     - text: 您想要执行哪个操作？

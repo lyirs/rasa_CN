@@ -42,6 +42,12 @@ nlu:
       - 好了，就说这么多了
       - 好了，先这样
       - 没事
+      - 希望能再次和你聊天
+      - 祝你一天愉快
+      - 祝你好运
+      - 再和你聊天
+      - 很高兴和你交谈
+      - 希望能和你再次见面
   - intent: affirm
     examples: |
       - 是
@@ -68,11 +74,6 @@ nlu:
     examples: |
       - 难受
       - 我很伤心
-  - intent: bot_challenge
-    examples: |
-      - 你是人类吗？
-      - 你是机器人吗？
-      - 你是谁？
   - intent: bot_first_scene
     examples: |
       - 你好世界
@@ -81,3 +82,15 @@ nlu:
     examples: |
       - 停
       - 停止
+  - intent: thank_you
+    examples: |
+      - 谢谢
+      - 感谢你
+      - 非常感谢
+      - 多谢
+      - 谢谢你的帮助
+      - 非常感谢你的协助
+      - 感谢你的回答
+      - 谢谢你的时间
+      - 多谢你的指导
+      - 非常感谢你的支持
