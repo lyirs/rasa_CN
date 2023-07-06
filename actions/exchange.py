@@ -22,7 +22,8 @@ class ActionExchangeRate(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        number = tracker.slots.get("number")
+        number = next(tracker.get_latest_entity_values("number"), None)
+
         # 发起 GET 请求
         url = 'http://op.juhe.cn/onebox/exchange/currency'
         params = {
@@ -45,7 +46,7 @@ class ActionExchangeRate(Action):
         result = float(number) * result  # type: ignore
         result = round(result, 2)
 
-        info = f"当前汇率：{data['result'][0]['exchange']}\n(结果：{result})]"
+        info = f"当前汇率：{data['result'][0]['exchange']}\n(结果：{result})"
 
         dispatcher.utter_message(text=info)
 
