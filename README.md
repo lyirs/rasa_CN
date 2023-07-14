@@ -1,7 +1,7 @@
 <h1 align="center">基于RASA的中文任务型机器人</h1>
 <div align="center">
 
-[![Static Badge](https://img.shields.io/badge/rasa-3.5-blue)](https://github.com/RasaHQ/rasa)
+[![Static Badge](https://img.shields.io/badge/rasa-3.6-blue)](https://github.com/RasaHQ/rasa)
 ![Static Badge](https://img.shields.io/badge/python-3.8-orange)
 
 </div>
@@ -49,6 +49,7 @@
 | 任务型 | 查询快递   | [快递网](http://www.kuaidi.com/)       | -        |
 | 任务型 | 查询车票   | [12306](https://kyfw.12306.cn/)        | smp2019  |
 | 任务型 | 查询新闻   | [聚合](https://www.juhe.cn/)           | -        |
+| 任务型 | 查询汇率   | [聚合](https://www.juhe.cn/)           | -        |
 
 <hr/>
 
