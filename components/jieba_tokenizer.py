@@ -29,7 +29,6 @@ logger = logging.getLogger(__name__)
 @DefaultV1Recipe.register(
     DefaultV1Recipe.ComponentType.MESSAGE_TOKENIZER, is_trainable=True
 )
-
 class JiebaTokenizer(Tokenizer):
     """This tokenizer is a wrapper for Jieba (https://github.com/fxsjy/jieba)."""
 
@@ -52,6 +51,8 @@ class JiebaTokenizer(Tokenizer):
             "intent_split_symbol": "_",
             # Regular expression to detect tokens
             "token_pattern": None,
+            # Symbol on which prefix should be split
+            "prefix_separator_symbol": None,
         }
 
     # 初始化函数，主要用于设置模型存储和资源对象
@@ -106,7 +107,7 @@ class JiebaTokenizer(Tokenizer):
         """Copies the dictionary to the model storage."""
         self.persist()
         return self._resource
-    
+
     # 重写_apply_token_pattern方法，使之接收ExtendedToken
     def _apply_token_pattern(self, tokens: List[ExtendedToken]) -> List[ExtendedToken]:
         if not self._config["token_pattern"]:
@@ -161,7 +162,7 @@ class JiebaTokenizer(Tokenizer):
         #     print(f"Word: {token.text}, POS: {token.pos}")
 
         return self._apply_token_pattern(tokens)
-        
+
     def process(self, messages: List[Message]) -> List[Message]:
         """Tokenize the incoming messages."""
         for message in messages:
@@ -181,10 +182,12 @@ class JiebaTokenizer(Tokenizer):
 
                     # Store the text_tokens with POS information in a new field
                     text_tokens_with_pos = [
-                        {"text": t.text, "start": t.start, "end": t.end, "pos": t.pos}
+                        {"text": t.text, "start": t.start,
+                            "end": t.end, "pos": t.pos}
                         for t in tokens if isinstance(t, ExtendedToken)
                     ]
-                    message.set("text_tokens_with_pos", text_tokens_with_pos, True)
+                    message.set("text_tokens_with_pos",
+                                text_tokens_with_pos, True)
         return messages
 
     # 类方法，用于从模型存储中加载自定义词典。
@@ -224,14 +227,15 @@ class JiebaTokenizer(Tokenizer):
         for target_file in target_file_list:
             shutil.copy2(target_file, output_dir)
 
-
     # 将自定义词典持久化到模型存储中
+
     def persist(self) -> None:
         """Persist the custom dictionaries."""
         dictionary_path = self._config["dictionary_path"]
         if dictionary_path is not None:
             with self._model_storage.write_to(self._resource) as resource_directory:
-                self._copy_files_dir_to_dir(dictionary_path, str(resource_directory))
+                self._copy_files_dir_to_dir(
+                    dictionary_path, str(resource_directory))
 
 
 # 扩展 rasa.nlu.tokenizers.tokenizer.Token 类以添加一个新属性来存储词性信息。
@@ -261,6 +265,6 @@ class ExtendedToken(Token):
             and self.lemma == other.lemma
             and self.pos == other.pos
         )
-    
+
     def __repr__(self) -> Text:
         return f"ExtendedToken(text={self.text!r}, start={self.start}, end={self.end}, pos={self.pos!r})"
