@@ -49,6 +49,7 @@
 | 任务型 | 查询快递   | [快递网](http://www.kuaidi.com/)       | -        |
 | 任务型 | 查询车票   | [12306](https://kyfw.12306.cn/)        | smp2019  |
 | 任务型 | 查询新闻   | [聚合](https://www.juhe.cn/)           | -        |
+| 任务型 | 微博热搜   | [天行](https://www.tianapi.com/)       | -        |
 | 任务型 | 查询汇率   | [聚合](https://www.juhe.cn/)           | -        |
 
 <hr/>

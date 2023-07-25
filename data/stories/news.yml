@@ -5,7 +5,7 @@ stories:
     steps:
       - intent: get_news
       - action: action_get_news
-stories:
+
   - story: get weibohot
     steps:
       - intent: get_weibohot
