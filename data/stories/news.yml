@@ -10,3 +10,8 @@ stories:
     steps:
       - intent: get_weibohot
       - action: action_get_weibohot
+
+  - story: get toutiaohot
+    steps:
+      - intent: get_toutiaohot
+      - action: action_get_toutiaohot

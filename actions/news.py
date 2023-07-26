@@ -69,7 +69,7 @@ class ActionWeiboHot(Action):
         # 发起 GET 请求
         url = 'https://apis.tianapi.com/weibohot/index'
         params = {
-            'key': os.getenv("WEIBOHOT_KEY", ""),
+            'key': os.getenv("TIANAPI_KEY", ""),
         }
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -86,6 +86,44 @@ class ActionWeiboHot(Action):
         for new_data in data['result']['list'][:10]:
             title = new_data['hotword']
             hotwordnum = new_data['hotwordnum']
+            info_list.append(
+                f"{title}(热度：{hotwordnum})")
+
+        dispatcher.utter_message(
+            text='\n'.join(info_list))
+
+        return []
+
+
+class ActionToutiaoHot(Action):
+
+    def name(self) -> Text:
+        return "action_get_toutiaohot"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # 发起 GET 请求
+        url = 'https://apis.tianapi.com/toutiaohot/index'
+        params = {
+            'key': os.getenv("TIANAPI_KEY", ""),
+        }
+        headers = {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
+        response = requests.get(url=url, params=params, headers=headers)
+
+        if response.status_code != 200:
+            dispatcher.utter_message(text="我无法从服务器获取数据。")
+            return []
+
+        data = response.json()
+
+        info_list = []  #
+        for new_data in data['result']['list'][:10]:
+            title = new_data['word']
+            hotwordnum = new_data['hotindex']
             info_list.append(
                 f"{title}(热度：{hotwordnum})")
 

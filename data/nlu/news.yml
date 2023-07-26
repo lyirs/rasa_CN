@@ -17,3 +17,8 @@ nlu:
       - 我想知道今天的微博热搜
       - 微博热搜
       - 微博头条
+  - intent: get_toutiaohot
+    examples: |
+      - 今日头条
+      - 今日头条话题
+      - 今日头条热点新闻
