@@ -192,3 +192,67 @@ pip install -i http://pypi.mirrors.ustc.edu.cn/simple/ module # 中国科学技�
 git config --global --add remote.origin.proxy ""
 git config --global http.sslBackend "openssl"
 ```
+
+- ERROR:pip install xmlsec 安装失败
+
+```
+ × Building wheel for xmlsec (pyproject.toml) did not run successfully.
+ │ exit code: 1
+ ╰─> [13 lines of output]
+     running bdist_wheel
+     running build
+     running build_py
+     creating build
+     creating build/lib.linux-x86_64-cpython-38
+     creating build/lib.linux-x86_64-cpython-38/xmlsec
+     copying src/xmlsec/py.typed -> build/lib.linux-x86_64-cpython-38/xmlsec
+     copying src/xmlsec/constants.pyi -> build/lib.linux-x86_64-cpython-38/xmlsec
+     copying src/xmlsec/tree.pyi -> build/lib.linux-x86_64-cpython-38/xmlsec
+     copying src/xmlsec/template.pyi -> build/lib.linux-x86_64-cpython-38/xmlsec
+     copying src/xmlsec/__init__.pyi -> build/lib.linux-x86_64-cpython-38/xmlsec
+     running build_ext
+     error: xmlsec1 is not installed or not in path.
+     [end of output]
+    note: This error originates from a subprocess, and is likely not a problem with pip.
+    ERROR: Failed building wheel for xmlsec
+```
+
+安装依赖库：
+
+```
+apt-get install -y libxml2-dev libxmlsec1-dev libxmlsec1-openssl
+```
+
+<h3 align="center">
+
+💡 **Docker** 💡
+
+</h3>
+
+Dockerfire 参考:
+
+```
+FROM python:3.8.15
+WORKDIR /rasa
+COPY . /rasa
+RUN apt-get update && \
+    apt-get install -y libxml2-dev libxmlsec1-dev libxmlsec1-openssl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN python -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple/ && \
+    pip install \
+    xmlsec==1.3.13 \
+    tensorflow==2.12.0 \
+    scikit_learn==1.1.3 \
+    matplotlib==3.5.3 \
+    protobuf==3.20.3 \
+    -i http://mirrors.aliyun.com/pypi/simple/  --trusted-host mirrors.aliyun.com && \
+    pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/  --trusted-host mirrors.aliyun.com
+```
+
+本仓库 docker 下载
+
+```
+docker push lyirs/rasa:1.0
+docker run -it lyirs/rasa
+```
