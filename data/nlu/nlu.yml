@@ -74,10 +74,6 @@ nlu:
     examples: |
       - 难受
       - 我很伤心
-  - intent: bot_first_scene
-    examples: |
-      - 你好世界
-      - hello world
   - intent: stop
     examples: |
       - 停

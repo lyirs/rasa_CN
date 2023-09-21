@@ -8,6 +8,7 @@ intents:
   - stop
   - mood_great
   - mood_unhappy
+  - thank_you
   - chitchat
   - faq
 
@@ -29,13 +30,13 @@ responses:
   utter_goodbye:
     - text: 再见~
   # 测试
-  utter_bot_buttons:
-    - text: 您想要执行哪个操作？
-      buttons:
-        - title: "great"
-          payload: "/mood_great"
-        - title: "super sad"
-          payload: "/mood_unhappy"
+  # utter_bot_buttons:
+  #   - text: 您想要执行哪个操作？
+  #     buttons:
+  #       - title: "great"
+  #         payload: "/mood_great"
+  #       - title: "super sad"
+  #         payload: "/mood_unhappy"
   # default
   utter_default:
     - text: 抱歉，我没有明白您的意思。请尝试用其他方式描述您的问题。

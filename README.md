@@ -130,6 +130,18 @@
 
 `tensorboard --logdir ./log `
 
+### 微调 (实验性功能)
+
+`rasa train --finetune --domain domain`
+
+_微调模型时通常需要比从头开始训练时更少的迭代次数（epochs）。你可以使用一个配置了更少迭代次数的模型配置，或者使用 --epoch-fraction 标志。例如，如果 DIETClassifier 配置为使用 100 个迭代，指定 --epoch-fraction 0.5 会只用 50 个迭代来微调。_
+
+`rasa train --finetune --domain domain --epoch-fraction 0.5`
+
+- 用于微调的配置应与原始训练模型时使用的配置完全相同。唯一可以更改的参数是各个机器学习组件和策略的迭代次数（epochs）。
+- 基础模型训练的标签集（包括意图、动作、实体和插槽）应与微调时使用的训练数据中的标签完全相同。这意味着在增量训练期间，你不能在训练数据中添加新的意图、动作、实体或插槽标签。但你仍然可以为现有的每个标签添加新的训练样本。如果在训练数据中添加/删除了标签，则需要从头开始训练。
+- 微调的模型应当与当前安装的 rasa 版本的 MINIMUM_COMPATIBLE_VERSION 相匹配。
+
 <hr />
 
 <h3 align="center">
