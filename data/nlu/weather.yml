@@ -82,6 +82,7 @@ nlu:
       - [9月初四](date-time)的天气如何
       - [明天](date-time)天气多少摄氏度
       - [今天](date-time)天气
+      - [今天](date-time)天气怎么样
       - [昨天](date-time)什么天气
       - [明天](date-time)要不要戴手套
       - [今天](date-time)去外边要穿毛衣吗

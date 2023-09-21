@@ -17,12 +17,12 @@ pipeline:
   # # If you'd like to customize it, uncomment and adjust the pipeline.
   # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
   # - name: JiebaTokenizer
-  #   dictionary_path: "pipline/jieba_userdict"
+  #   dictionary_path: "pipeline/jieba_userdict"
   - name: components.jieba_tokenizer.JiebaTokenizer
-    dictionary_path: "pipline/jieba_userdict"
+    dictionary_path: "pipeline/jieba_userdict"
   - name: LanguageModelFeaturizer
     model_name: "bert"
-    model_weights: "pipline/bert-base-chinese"
+    model_weights: "pipeline/bert-base-chinese"
   - name: RegexFeaturizer
   - name: components.custom_number_extractor.CustomNumberExtractor
   - name: components.custom_time_extractor.CustomTimeExtractor

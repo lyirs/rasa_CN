@@ -2,8 +2,8 @@
 /addons
 cqhttp
 /models
-/pipline/total_word_feature_extractor_zh.dat
 log
-/pipline/bert-base-chinese
+/pipeline/bert-base-chinese
 /.env
 /*.env
+/test
