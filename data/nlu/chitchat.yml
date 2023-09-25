@@ -410,3 +410,7 @@ nlu:
       - 虽然你是机器人，但我还是喜欢你
       - 虚拟的爱也是一种表达，我爱你
       - 我很高兴和你建立联系，我对你有好感
+  - intent: chitchat/good_night
+    examples: |
+      - 晚安
+      - good night

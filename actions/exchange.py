@@ -21,17 +21,34 @@ class ActionExchangeRate(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        currency_map = {
+            "美元":"USD",
+            "日元":"JPY",
+            "欧元":"EUR",
+            "英镑":"GBP",
+            "韩元":"KER",
+            "港币":"HKD",
+            "卢布":"RUB",
+        }
 
-        number = next(tracker.get_latest_entity_values("number"), None)
-
+        # number = next(tracker.get_latest_entity_values("number"), None)
+        number = tracker.get_slot("number")
+        currency = tracker.get_slot("currency")
+        
         # 发起 GET 请求
         url = 'http://op.juhe.cn/onebox/exchange/currency'
-        params = {
-            'key': os.getenv("Exchange_KEY", ""),
-            'from': 'USD',
-            'to': 'CNY',
-            'version': 2,
-        }
+        try:
+            params = {
+                'key': os.getenv("Exchange_KEY", ""),
+                'from': currency_map[currency],
+                'to': 'CNY',
+                'version': 2,
+            }
+        except Exception as e:
+            dispatcher.utter_message(text="暂时不清楚这个货币的汇率哦~")
+            return
+        
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
         }

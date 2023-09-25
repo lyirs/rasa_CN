@@ -130,3 +130,6 @@ responses:
     - text: 我也想你呢！虽然我们不能面对面，但请记住，我始终在这里陪伴着你。有什么我能为你做的吗？
   utter_chitchat/express_love:
     - text: 谢谢你的表达，我很高兴能够陪伴你。
+  utter_chitchat/good_night:
+    - text: 晚安~
+    - text: 睡个好觉~

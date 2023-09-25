@@ -3,11 +3,30 @@ version: "3.1"
 nlu:
   - intent: exchange_rate
     examples: |
-      - [500](number)美元
-      - [10](number)美元
-      - [350](number)美元
-      - [120](number)美元
-      - [100](number)美元
-      - [30](number)美元
-      - [45](number)美元
-      - [65](number)美元
+      - [500](number)[美元](currency)
+      - [10](number)[美元](currency)
+      - [350](number)[美元](currency)
+      - [120](number)[美元](currency)
+      - [100](number)[美元](currency)
+      - [30](number)[美元](currency)
+      - [45](number)[美元](currency)
+      - [65](number)[美元](currency)
+      - [1](number)[日元](currency)
+      - [10000](number)[日元](currency)
+      - [5000](number)[日元](currency)
+      - [2000](number)[日元](currency)
+      - [1000](number)[日元](currency)
+      - [1](number)[欧元](currency)
+      - [1](number)[英镑](currency)
+      - [1](number)[韩元](currency)
+      - [1](number)[港币](currency)
+      - [1](number)[卢布](currency)
+  - lookup: currency
+    examples: |
+      - 美元
+      - 日元
+      - 欧元
+      - 英镑
+      - 韩元
+      - 港币
+      - 卢布
