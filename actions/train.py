@@ -42,24 +42,21 @@ class ActionQueryTrain(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         # 提取地点实体
-        departure = next(
-            (e for e in tracker.latest_message['entities'] if e['entity'] == 'address' and e['role'] == 'departure'), None)
-        destination = next(
-            (e for e in tracker.latest_message['entities'] if e['entity'] == 'address' and e['role'] == 'destination'), None)
+        departure = tracker.get_slot("departure")
+        destination = tracker.get_slot("destination")
         date_text = tracker.get_slot("date-time")
+
         date_object = text_to_date(date_text)
 
-        print(departure['value'], destination['value'], date_object)
-
-        departure_code = station_map.get(departure['value'])
-        destination_code = station_map.get(destination['value'])
+        departure_code = station_map.get(departure)
+        destination_code = station_map.get(destination)
 
         if not departure_code or not destination_code:
             dispatcher.utter_message(text="我不知道这些地方的代码。")
             return []
 
         # 发起 GET 请求
-        url = 'https://kyfw.12306.cn/otn/leftTicket/query'
+        url = 'https://kyfw.12306.cn/otn/leftTicket/queryZ'
         params = {
             'leftTicketDTO.train_date': date_object,
             'leftTicketDTO.from_station': departure_code,
@@ -90,8 +87,8 @@ class ActionQueryTrain(Action):
             result = train_data.split('|')
 
             train_no = result[3]  # 火车编号
-            departure_city = departure['value']  # 出发城市
-            destination_city = destination['value']  # 到达城市
+            departure_city = departure  # 出发城市
+            destination_city = destination  # 到达城市
             departure_time = result[8]  # 出发时间
             arrival_time = result[9]  # 到达时间
 

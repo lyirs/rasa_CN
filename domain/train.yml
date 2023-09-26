@@ -16,12 +16,18 @@ slots:
       - type: from_entity
         entity: address
         role: departure
+      - type: from_entity
+        entity: address
+        intent: info_address
   destination:
     type: any
     mappings:
       - type: from_entity
         entity: address
         role: destination
+      - type: from_entity
+        entity: address
+        intent: info_address
 
 responses:
   utter_ask_departure:

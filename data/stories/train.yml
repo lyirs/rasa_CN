@@ -26,3 +26,68 @@ stories:
       - intent: deny
       - action: action_deactivate_loop
       - active_loop: null
+
+  - story: train interactive_story_1
+    steps:
+      - intent: train_ticket
+      - action: train_query_form
+      - active_loop: train_query_form
+      - slot_was_set:
+          - requested_slot: departure
+      - intent: info_address
+        entities:
+          - address: 上海
+      - slot_was_set:
+          - address: 上海
+      - slot_was_set:
+          - departure: 上海
+      - intent: info_address
+        entities:
+          - address: 上海
+      - action: train_query_form
+      - slot_was_set:
+          - requested_slot: departure
+      - action: train_query_form
+      - active_loop: train_query_form
+      - slot_was_set:
+          - requested_slot: departure
+      - intent: info_address
+        entities:
+          - address: 上海
+      - slot_was_set:
+          - address: 上海
+      - slot_was_set:
+          - departure: 上海
+      - intent: info_address
+        entities:
+          - address: 上海
+      - intent: info_address
+        entities:
+          - address: 上海
+      - slot_was_set:
+          - address: 上海
+      - slot_was_set:
+          - departure: 上海
+      - action: train_query_form
+      - slot_was_set:
+          - requested_slot: destination
+      - intent: info_address
+        entities:
+          - address: 北京
+      - slot_was_set:
+          - address: 北京
+      - slot_was_set:
+          - destination: 北京
+      - action: train_query_form
+      - slot_was_set:
+          - requested_slot: date-time
+      - intent: info_date
+        entities:
+          - date-time: 明天
+      - slot_was_set:
+          - date-time: 明天
+      - action: train_query_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_query_train

@@ -26,8 +26,8 @@ pipeline:
   - name: RegexFeaturizer
   - name: components.custom_number_extractor.CustomNumberExtractor
   - name: components.custom_time_extractor.CustomTimeExtractor
-  - name: source.diet_classifier.DIETClassifier
-    # - name: DIETClassifier
+  # - name: source.diet_classifier.DIETClassifier
+  - name: DIETClassifier
     epochs: 500
     learning_rate: 0.001
     tensorboard_log_directory: ./log

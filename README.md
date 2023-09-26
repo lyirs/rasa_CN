@@ -1,8 +1,12 @@
 <h1 align="center">基于RASA的中文任务型机器人</h1>
 <div align="center">
 
-[![Static Badge](https://img.shields.io/badge/rasa-3.6-blue)](https://github.com/RasaHQ/rasa)
+[![Static Badge](https://img.shields.io/badge/rasa-3.6.9-blue)](https://github.com/RasaHQ/rasa)
+[![Static Badge](https://img.shields.io/badge/rasa--sdk-3.6.2-blue)](https://github.com/RasaHQ/rasa)
 ![Static Badge](https://img.shields.io/badge/python-3.8-orange)
+
+![Static Badge](https://img.shields.io/badge/tensorflow-2.12.0-8A2BE2)
+![Static Badge](https://img.shields.io/badge/sanic-21.12.2-8A2BE2)
 
 </div>
 
