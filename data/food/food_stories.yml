@@ -1,0 +1,15 @@
+version: "3.1"
+
+stories:
+  - story: get nutrient
+    steps:
+      - intent: get_nutrient
+      - action: action_get_nutrient
+
+  - story: food chitchat
+    steps:
+      - intent: get_nutrient
+        entities:
+          - food: 草莓
+      - action: action_get_nutrient
+      - bot: 我很喜欢草莓\(^o^)/~

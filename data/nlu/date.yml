@@ -1,0 +1,35 @@
+version: "3.1"
+
+nlu:
+  - intent: info_date
+    examples: |
+      - [明天](date-time)
+      - [后天](date-time)
+      - [下个星期日](date-time)怎么样
+      - 还需要[昨天](date-time)的
+      - 我还要[昨天](date-time)的
+      - [明天](date-time)如何
+      - [后天](date-time)如何
+      - [星期六](date-time)呢
+      - [后天](date-time)的呢
+      - [明天](date-time)的怎么说
+      - [两天后](date-time)的大概什么样
+      - [前天](date-time)的
+      - 帮我查查[三天前](date-time)
+      - 帮我查查[下星期五](date-time)的
+      - 还要[明天](date-time)的
+
+  - synonym: 下个星期一
+    examples: |
+      - 下星期一
+  - synonym: 今天
+    examples: |
+      - 早上
+      - 中午
+      - 晚上
+      - 下午
+      - 傍晚
+      - 今日
+  - synonym: 明天
+    examples: |
+      - 明日

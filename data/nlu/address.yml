@@ -1,0 +1,24 @@
+version: "3.1"
+
+nlu:
+  - intent: info_address
+    examples: |
+      - 告诉我[广州](address)怎么样
+      - [广州](address)
+      - 那么[辽宁](address)呢
+      - [北京](address)啥情况
+      - [厦门](address)怎么样
+      - [武汉](address)呢
+      - [香港](address)呢
+      - 我在[杭州](address)
+      - [上海](address)
+      - 在[宁波](address)呢
+      - [宁波](address)
+      - [首都](address)
+
+  - synonym: 北京
+    examples: |
+      - 首都
+  - synonym: 上海
+    examples: |
+      - 魔都

@@ -33,7 +33,7 @@
 | data/stories | Rasa 故事数据                                                                            |
 | domain       | 领域指定了 rasa 应该知道的意图、实体、插槽、响应、表单和动作。它还定义了会话会话的配置。 |
 | models       | 训练的模型数据                                                                           |
-| pipline      | 流水线组件配置                                                                           |
+| pipeline     | 流水线组件配置                                                                           |
 | server       | 前后端服务                                                                               |
 | source       | RASA 源代码，只是用来调试 DIET 的*(:з」∠)*                                               |
 | .env         | 相关环境变量，主要用于 API                                                               |
@@ -101,6 +101,7 @@
 ### 交互式对话
 
 `rasa interactive --domain domain`
+`rasa interactive --domain domain --model <指定模型>`
 
 ### 故事可视化
 
