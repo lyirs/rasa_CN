@@ -1,0 +1,32 @@
+version: "3.1"
+
+nlu:
+  - intent: recommend_movie
+    examples: |
+      - [奇幻](movieType)电影
+      - [徐克](director)导演的电影
+      - 有没有好看的[动作](movieType)电影
+      - [奥黛丽·赫本](actor)演的电影
+      - 推荐几部[中国](country)的电影
+
+  - intent: detail_of_movie
+    examples: |
+      - 介绍一下[活着](movie)
+      - [肖申克的救赎](movie)[评分](relation_rate)多少
+
+  - synonym: 1960,1961,1962,1963,1964,1965,1966,1967,1968,1969
+    examples: |
+      - 60年代
+      - 六十年代
+  - synonym: 1970,1971,1972,1973,1974,1975,1976,1977,1978,1979
+    examples: |
+      - 70年代
+      - 七十年代
+  - synonym: 1980,1981,1982,1983,1984,1985,1986,1987,1988,1989
+    examples: |
+      - 80年代
+      - 八十年代
+  - synonym: 1990,1991,1992,1993,1994,1995,1996,1997,1998,1999
+    examples: |
+      - 90年代
+      - 九十年代
