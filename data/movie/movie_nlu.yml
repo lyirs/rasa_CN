@@ -4,15 +4,91 @@ nlu:
   - intent: recommend_movie
     examples: |
       - [奇幻](movieType)电影
+      - [喜剧](movieType)片
+      - 推荐一些[喜剧](movieType)电影
       - [徐克](director)导演的电影
+      - [陈凯歌](director)导演过哪些电影
       - 有没有好看的[动作](movieType)电影
       - [奥黛丽·赫本](actor)演的电影
       - 推荐几部[中国](country)的电影
+      - 有没有[美国](country)的电影推荐
+      - [德国](country)有哪些好看的电影
+      - [蒂姆·罗宾斯](actor)演过哪些电影
+      - [蒂姆·罗宾斯](actor)演哪些电影
+      - [蒂姆·罗宾斯](actor)演过的电影
+      - [蒂姆·罗宾斯](actor)演过什么电影
+      - [蒂姆·罗宾斯](actor)演过哪些电影
+      - [蒂姆·罗宾斯](actor)演过的电影有哪些
+      - [蒂姆·罗宾斯](actor)出演的电影有哪些
+      - [蒂姆·罗宾斯](actor)出演了什么电影
+      - [蒂姆·罗宾斯](actor)以前演过哪些电影
+      - [1960](year)年有哪些好看的电影
+      - [1961](year)年有哪些[动作](movieType)电影
+      - 请推荐几部[60年代](years)的电影
+      - [70年代](years)的电影
+      - [90年代](years)的[科幻](movieType)片
 
   - intent: detail_of_movie
     examples: |
       - 介绍一下[活着](movie)
-      - [肖申克的救赎](movie)[评分](relation_rate)多少
+      - [肖申克的救赎](movie)讲了什么
+      - [阿甘正传](movie)的剧情是什么
+      - [阿甘正传](movie)主要讲什么内容
+      - [阿甘正传](movie)的主要剧情是什么
+      - [阿甘正传](movie)主要讲什么故事
+      - [阿甘正传](movie)的剧情简介
+      - [阿甘正传](movie)的故事内容
+      - [阿甘正传](movie)的主要情节
+      - [阿甘正传](movie)的情节梗概
+      - [阿甘正传](movie)的故事梗概
+
+  - intent: rate_of_movie
+    examples: |
+      - [肖申克的救赎](movie)评分多少 
+      - [阿甘正传](movie)口碑如何
+      - [阿甘正传](movie)的评分是多少
+      - [阿甘正传](movie)得了多少分
+      - [阿甘正传](movie)的评分有多少
+      - [阿甘正传](movie)的评分
+      - [阿甘正传](movie)的分数是
+      - [阿甘正传](movie)电影分数是多少
+      - [阿甘正传](movie)评分
+      - [阿甘正传](movie)的分数是多少
+      - [阿甘正传](movie)这部电影的评分是多少
+
+  - intent: time_of_movie
+    examples: |
+      - [肖申克的救赎](movie)评分多少 
+      - [阿甘正传](movie)的上映时间是什么时候
+      - [阿甘正传](movie)的首映时间是什么时候
+      - [阿甘正传](movie)什么时候上映
+      - [阿甘正传](movie)什么时候首映
+      - [阿甘正传](movie)什么时候在影院上线
+      - 什么时候可以在影院看到[阿甘正传](movie)
+      - [阿甘正传](movie)什么时候在影院放映
+      - [阿甘正传](movie)什么时候首播
+
+  - intent: actors_of_movie
+    examples: |
+      - [肖申克的救赎](movie)有哪些演员
+      - 哪些演员参演了[阿甘正传](movie)
+      - [阿甘正传](movie)有哪些演员出演
+      - [阿甘正传](movie)是由哪些人演的
+      - [阿甘正传](movie)中参演的演员都有哪些
+      - [阿甘正传](movie)中哪些人演过
+      - [阿甘正传](movie)这部电影的演员都有哪些
+      - [阿甘正传](movie)这部电影中哪些人演过
+
+  - intent: type_of_movie
+    examples: |
+      - [机器人总动员](movie)是一部什么类型的电影
+      - [海上钢琴师](movie)是什么类型的
+      - [阿甘正传](movie)的风格是什么
+      - [阿甘正传](movie)是什么风格的电影
+      - [阿甘正传](movie)的格调是什么
+      - [阿甘正传](movie)是什么格调的电影
+      - [阿甘正传](movie)是什么类型的电影
+      - [阿甘正传](movie)的类型是什么
 
   - synonym: 1960,1961,1962,1963,1964,1965,1966,1967,1968,1969
     examples: |
