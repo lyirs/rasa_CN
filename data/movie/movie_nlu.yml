@@ -58,7 +58,6 @@ nlu:
 
   - intent: time_of_movie
     examples: |
-      - [肖申克的救赎](movie)评分多少 
       - [阿甘正传](movie)的上映时间是什么时候
       - [阿甘正传](movie)的首映时间是什么时候
       - [阿甘正传](movie)什么时候上映

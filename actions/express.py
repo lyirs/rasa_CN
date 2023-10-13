@@ -6,7 +6,7 @@
 
 
 from typing import Any, Text, Dict, List
-
+from rasa_sdk.events import SlotSet
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import time
@@ -52,4 +52,4 @@ class ActionSearchExpress(Action):
             text += f'物流状态：{info}' + '\n'
 
         dispatcher.utter_message(text=text)
-        return []
+        return [SlotSet("number", None),SlotSet("express", None)]
