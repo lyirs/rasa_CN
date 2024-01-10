@@ -43,7 +43,6 @@ class ActionExchangeRate(Action):
                 'key': os.getenv("Exchange_KEY", ""),
                 'from': currency_map[currency],
                 'to': 'CNY',
-                'version': 2,
             }
         except Exception as e:
             dispatcher.utter_message(text="暂时不清楚这个货币的汇率哦~")

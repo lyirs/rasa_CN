@@ -11,15 +11,15 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 
-class ActionHelloWorld(Action):
+class ActionFallback(Action):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "action_fallback"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="Hello World!")
+        dispatcher.utter_message(text="我不知道你在说什么_(:з」∠)_")
 
         return []

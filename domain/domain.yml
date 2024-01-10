@@ -46,14 +46,14 @@ responses:
     - text: 不好意思，我无法理解您的问题。请提供更多详细信息以便我帮助您。
   # utter_ask_affirmation:
   #   - text: "我不太确定我理解您的问题。您是否可以确认一下我是否理解正确？"
-  utter_ask_rephrase:
-    - text: "请尝试用其他方式描述您的问题。"
+  # utter_ask_rephrase:
+  #   - text: "请尝试用其他方式描述您的问题。"
 
 # ##################################################
 # actions
 # ##################################################
 actions:
-  - action_hello_world
+  - action_fallback
 
 session_config:
   session_expiration_time: 60
