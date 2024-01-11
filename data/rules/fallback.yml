@@ -3,4 +3,4 @@ rules:
   - rule: fallback
     steps:
       - intent: nlu_fallback
-      - action: action_fallback
+      - action: action_openai_fallback

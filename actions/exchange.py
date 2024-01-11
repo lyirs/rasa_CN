@@ -62,7 +62,7 @@ class ActionExchangeRate(Action):
         result = float(number) * result  # type: ignore
         result = round(result, 2)
 
-        info = f"当前汇率：{data['result'][0]['exchange']}\n(结果：{result})"
+        info = f"当前汇率\n{currency_map[currency]}->CNY\n{data['result'][0]['exchange']}\n(结果：{result})"
 
         dispatcher.utter_message(text=info)
 
