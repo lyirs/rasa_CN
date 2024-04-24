@@ -1,0 +1,14 @@
+version: "3.1"
+stories:
+- story: conversation default_story_0
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: conversation 1.0
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_dosth
+  - action: utter_ask_dosth
+

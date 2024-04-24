@@ -25,6 +25,7 @@ class ActionNews(Action):
 
         # 发起 GET 请求
         url = 'http://v.juhe.cn/toutiao/index'
+        print(os.getenv("NEWS_KEY", ""))
         params = {
             'key': os.getenv("NEWS_KEY", ""),
             'type': 'top',
@@ -49,7 +50,7 @@ class ActionNews(Action):
             author = new_data['author_name']
             date = new_data['date']
             info_list.append(
-                f"{title}(来源：{author})[{date}]")
+                f"{title}[{date}]")
 
         dispatcher.utter_message(
             text='\n'.join(info_list))

@@ -1,0 +1,9 @@
+version: "3.1"
+intents:
+  - ask_dosth
+  - greet
+responses:
+  utter_greet:
+  - text: "你好啊"
+  utter_ask_dosth:
+  - text: "我在吃饭"

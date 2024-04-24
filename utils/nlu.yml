@@ -1,0 +1,12 @@
+version: "3.1"
+nlu:
+- intent: ask_dosth
+  examples: |
+    - 你在干什么
+
+- intent: greet
+  examples: |
+    - 你好
+    - 早上好
+    - 晚安
+
