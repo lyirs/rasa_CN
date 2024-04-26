@@ -1,6 +1,5 @@
 .rasa
 /addons
-cqhttp
 /models
 log
 /pipeline/bert-base-chinese
@@ -9,4 +8,6 @@ log
 /test
 /web
 /extra
-/LLM
+__pycache__
+tracker_store.db
+story_graph.dot

@@ -1,14 +1,19 @@
 <h1 align="center">基于RASA的中文任务型机器人</h1>
 <div align="center">
 
-[![Static Badge](https://img.shields.io/badge/rasa-3.6.9-blue)](https://github.com/RasaHQ/rasa)
+[![Static Badge](https://img.shields.io/badge/rasa-3.6.20-blue)](https://github.com/RasaHQ/rasa)
 [![Static Badge](https://img.shields.io/badge/rasa--sdk-3.6.2-blue)](https://github.com/RasaHQ/rasa)
-![Static Badge](https://img.shields.io/badge/python-3.8-orange)
+![Static Badge](https://img.shields.io/badge/python-3.10.14-orange)
 
 ![Static Badge](https://img.shields.io/badge/tensorflow-2.12.0-8A2BE2)
 ![Static Badge](https://img.shields.io/badge/sanic-21.12.2-8A2BE2)
+![Static Badge](https://img.shields.io/badge/numpy-1.23.5-8A2BE2)
 
 [![Static Badge](https://img.shields.io/badge/neo4j-5.12.0-ffcc00)](https://neo4j.com/)
+
+[![Static Badge](https://img.shields.io/badge/openai-1.23.6-00FFFF)](https://github.com/langchain-ai/langchain)
+[![Static Badge](https://img.shields.io/badge/langchain-0.1.16-00FFFF)](https://github.com/langchain-ai/langchain)
+[![Static Badge](https://img.shields.io/badge/nltk-3.8.1-00FFFF)](https://github.com/langchain-ai/langchain)
 
 </div>
 
@@ -39,6 +44,7 @@
 | pipeline       | 流水线组件配置                                                                           |
 | server         | 前后端服务                                                                               |
 | source         | RASA 源代码，只是用来调试 DIET 的*(:з」∠)*                                               |
+| document       | langchain 学习的知识库                                                                   |
 | .env           | 相关环境变量，主要用于 API                                                               |
 
 #### .env 文件如下：
@@ -48,6 +54,8 @@ SENIVERSE_KEY=
 NEWS_KEY=
 Exchange_KEY=
 TIANAPI_KEY=
+OPENAI_API=
+OPENAI_URL=https://api.openai.com/v1
 ```
 
 <hr/>
@@ -58,18 +66,19 @@ TIANAPI_KEY=
 
 </h3>
 
-| 功能         | 描述         | API 来源                               | 数据来源 | 说明   |
-| ------------ | ------------ | -------------------------------------- | -------- | ------ |
-| 闲聊         | 简易打招呼   |                                        | -        | -      |
-| 任务型       | 查询天气     | [心知天气](https://www.seniverse.com/) | -        | -      |
-| 任务型       | 查询快递     | [快递网](http://www.kuaidi.com/)       | -        | -      |
-| 任务型       | 查询车票     | [12306](https://kyfw.12306.cn/)        | smp2019  | -      |
-| 任务型       | 查询新闻     | [聚合](https://www.juhe.cn/)           | -        | -      |
-| 任务型       | 微博热搜     | [天行](https://www.tianapi.com/)       | -        | -      |
-| 任务型       | 今日头条     | [天行](https://www.tianapi.com/)       | -        | -      |
-| 任务型       | 查询汇率     | [聚合](https://www.juhe.cn/)           | -        | -      |
-| 任务型       | 食物营养     | [天行](https://www.tianapi.com/)       | -        | -      |
-| 知识图谱问答 | 电影知识图谱 |                                        | 豆瓣     | 编写中 |
+| 功能         | 描述         | API 来源                               | 数据来源  | 说明   |
+| ------------ | ------------ | -------------------------------------- | --------- | ------ |
+| 闲聊         | 简易打招呼   |                                        | -         | -      |
+| 任务型       | 查询天气     | [心知天气](https://www.seniverse.com/) | -         | -      |
+| 任务型       | 查询快递     | [快递网](http://www.kuaidi.com/)       | -         | -      |
+| 任务型       | 查询车票     | [12306](https://kyfw.12306.cn/)        | smp2019   | -      |
+| 任务型       | 查询新闻     | [聚合](https://www.juhe.cn/)           | -         | -      |
+| 任务型       | 微博热搜     | [天行](https://www.tianapi.com/)       | -         | -      |
+| 任务型       | 今日头条     | [天行](https://www.tianapi.com/)       | -         | -      |
+| 任务型       | 查询汇率     | [聚合](https://www.juhe.cn/)           | -         | -      |
+| 任务型       | 食物营养     | [天行](https://www.tianapi.com/)       | -         | -      |
+| 知识图谱问答 | 电影知识图谱 |                                        | 豆瓣      | 编写中 |
+| 未知意图处理 | 未知意图处理 | langchain                              | langchain | -      |
 
 <hr/>
 
@@ -82,6 +91,10 @@ TIANAPI_KEY=
 ## 依赖安装
 
 `pip install -r requirements.txt`
+
+### langchain 依赖 nltk
+
+[NLTK](https://github.com/nltk/nltk_data)
 
 ## 训练
 
@@ -206,11 +219,11 @@ _微调模型时通常需要比从头开始训练时更少的迭代次数（epoc
 
 ### 创建 python 虚拟环境
 
-`conda create -n py38_rasa python=3.8`
+`conda create -n rasa python=3.10`
 
 ### 激活虚拟环境
 
-`conda activate py38_rasa`
+`conda activate rasa`
 
 <hr />
 
