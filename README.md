@@ -88,7 +88,7 @@ OPENAI_URL=https://api.openai.com/v1
 
 ## 依赖安装
 <del>
-`pip install -r requirements.txt
+`pip install -r requirements.txt`
 </del>
 
 `.venv\Scripts\activate.bat`
@@ -114,24 +114,6 @@ OPENAI_URL=https://api.openai.com/v1
 `rasa shell`
 
 <hr />
-
-<h3 align="center">
-
-💡 **neo4j 命令** 💡
-
-</h3>
-
-## 启动 neo4j
-
-`neo4j console`
-
-## 导出数据
-
-`neo4j-admin database dump neo4j --to-path=/backup`
-
-## 导入数据
-
-`neo4j-admin database load neo4j --from-path=/backup --overwrite-destination=true`
 
 <h3 align="center">
 
