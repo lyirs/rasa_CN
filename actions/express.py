@@ -35,6 +35,7 @@ class ActionSearchExpress(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_id = tracker.sender_id
         express = tracker.slots.get("express")
         number = tracker.slots.get("number")
         headers = {
