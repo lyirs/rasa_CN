@@ -87,11 +87,7 @@ OPENAI_URL=https://api.openai.com/v1
 </h3>
 
 ## 依赖安装
-<del>
 `pip install -r requirements.txt`
-</del>
-
-`.venv\Scripts\activate.bat`
 
 ### langchain 依赖 nltk
 
@@ -196,12 +192,12 @@ _微调模型时通常需要比从头开始训练时更少的迭代次数（epoc
 
 <div align="center">
 
-2024/10/24 删除了知识图谱相关代码，使用.venv作为虚拟环境
+2024/10/24 删除了知识图谱相关代码
 
 </div>
 
 <hr />
-<del>
+
 <h3 align="center">
 
 💡 **推荐使用 python 虚拟环境进行管理** 💡
@@ -223,7 +219,7 @@ _微调模型时通常需要比从头开始训练时更少的迭代次数（epoc
 `conda activate rasa`
 
 <hr />
-</del>
+
 <h3 align="center">
 
 📚 **问题** 📚

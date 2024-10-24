@@ -11,3 +11,4 @@ log
 __pycache__
 tracker_store.db
 story_graph.dot
+.venv
