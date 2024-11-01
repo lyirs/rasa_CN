@@ -6,11 +6,15 @@ import os
 import requests
 import json
 from requests import ConnectionError, HTTPError, TooManyRedirects, Timeout
-from dotenv import load_dotenv
 
-load_dotenv()
-KEY = os.getenv("SENIVERSE_KEY", "")  # API key
-API = "https://api.seniverse.com/v3/weather/daily.json"  # API URL
+from actions import ConfigLoader
+config = ConfigLoader.get_config()
+
+_config = next(
+    item for item in config['apis'] if item['name'] == 'Weather')
+
+API = _config['url']
+KEY = _config['key']
 UNIT = "c"  # 温度单位
 LANGUAGE = "zh-Hans"  # 查询结果的返回语言
 one_day_timedelta = datetime.timedelta(days=1)

@@ -13,6 +13,8 @@ from rasa_sdk.executor import CollectingDispatcher
 import requests
 from typing import Any, Dict, List, Text, Optional
 
+from actions import ConfigLoader
+config = ConfigLoader.get_config()
 
 class ActionNutrient(Action):
 
@@ -24,10 +26,14 @@ class ActionNutrient(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         food = tracker.get_slot("food")
-        # 发起 GET 请求
-        url = 'https://apis.tianapi.com/nutrient/index'
+
+        _config = next(
+            item for item in config['apis'] if item['name'] == 'Food')
+        url = _config['url']
+        api_key = _config['key']
+
         params = {
-            'key': os.getenv("TIANAPI_KEY", ""),
+            'key': api_key,
             'word': food,
             'mode': 0
         }

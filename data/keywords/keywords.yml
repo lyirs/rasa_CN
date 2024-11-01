@@ -1,0 +1,8 @@
+version: "3.1"
+
+keywords:
+  - keyword: "关键词"
+    responses:
+    - "关键词成功匹配~"
+    - "检测到关键词~"
+

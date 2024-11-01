@@ -13,6 +13,10 @@ import time
 import json
 import requests
 
+
+from actions import ConfigLoader
+config = ConfigLoader.get_config()
+
 express_list = {
     "圆通": "yuantong",
     "顺丰": "shunfeng",
@@ -22,7 +26,10 @@ express_list = {
 
 def get_url(code, id):
     time_new = str(int(time.time() * 1000))
-    url = "http://www.kuaidi.com/index-ajaxselectcourierinfo-" + \
+    _config = next(
+        item for item in config['apis'] if item['name'] == 'Exchange')
+    url = _config['url']
+    url = url + \
         id + "-" + code + "-UUCAO" + time_new + ".html"
     return url
 

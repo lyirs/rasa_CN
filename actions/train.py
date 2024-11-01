@@ -15,6 +15,9 @@ import requests
 from typing import Any, Dict, List, Text, Optional
 import datetime
 
+from actions import ConfigLoader
+config = ConfigLoader.get_config()
+
 with open('dataset/station_map.json', 'r', encoding='utf-8') as json_file:
     station_map = json.load(json_file)
 
@@ -54,9 +57,10 @@ class ActionQueryTrain(Action):
         if not departure_code or not destination_code:
             dispatcher.utter_message(text="我不知道这些地方的代码。")
             return []
+        _config = next(
+            item for item in config['apis'] if item['name'] == 'Train')
+        url = _config['url']
 
-        # 发起 GET 请求
-        url = 'https://kyfw.12306.cn/otn/leftTicket/queryZ'
         params = {
             'leftTicketDTO.train_date': date_object,
             'leftTicketDTO.from_station': departure_code,

@@ -7,13 +7,15 @@
 
 import os
 from typing import Any, Text, Dict, List
-
+import yaml
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 from typing import Any, Dict, List, Text, Optional
 
 
+from actions import ConfigLoader
+config = ConfigLoader.get_config()
 class ActionNews(Action):
 
     def name(self) -> Text:
@@ -22,12 +24,14 @@ class ActionNews(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        _config = next(
+            item for item in config['apis'] if item['name'] == 'News')
+        url = _config['url']
+        api_key = _config['key']
 
-        # 发起 GET 请求
-        url = 'http://v.juhe.cn/toutiao/index'
-        print(os.getenv("NEWS_KEY", ""))
         params = {
-            'key': os.getenv("NEWS_KEY", ""),
+            'key': api_key,
             'type': 'top',
             'page': 1,
             'page_size': 10,
@@ -66,11 +70,14 @@ class ActionWeiboHot(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        _config = next(
+            item for item in config['apis'] if item['name'] == 'WeiboHot')
+        url = _config['url']
+        api_key = _config['key']
 
-        # 发起 GET 请求
-        url = 'https://apis.tianapi.com/weibohot/index'
         params = {
-            'key': os.getenv("TIANAPI_KEY", ""),
+            'key': api_key,
         }
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -104,11 +111,14 @@ class ActionToutiaoHot(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        _config = next(
+            item for item in config['apis'] if item['name'] == 'ToutiaoHot')
+        url = _config['url']
+        api_key = _config['key']
 
-        # 发起 GET 请求
-        url = 'https://apis.tianapi.com/toutiaohot/index'
         params = {
-            'key': os.getenv("TIANAPI_KEY", ""),
+            'key': api_key,
         }
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',

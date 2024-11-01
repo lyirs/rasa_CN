@@ -11,8 +11,8 @@
 
 [![Static Badge](https://img.shields.io/badge/neo4j-5.12.0-ffcc00)](https://neo4j.com/)
 
-[![Static Badge](https://img.shields.io/badge/openai-1.23.6-00FFFF)](https://github.com/langchain-ai/langchain)
-[![Static Badge](https://img.shields.io/badge/langchain-0.1.16-00FFFF)](https://github.com/langchain-ai/langchain)
+[![Static Badge](https://img.shields.io/badge/openai-1.52.2-00FFFF)](https://github.com/langchain-ai/langchain)
+[![Static Badge](https://img.shields.io/badge/langchain-0.3.4-00FFFF)](https://github.com/langchain-ai/langchain)
 [![Static Badge](https://img.shields.io/badge/nltk-3.8.1-00FFFF)](https://github.com/langchain-ai/langchain)
 
 </div>
@@ -31,31 +31,21 @@
 
 </h3>
 
-| 文件           | 描述                                                                                     |
-| -------------- | ---------------------------------------------------------------------------------------- |
-| actions        | 自定义动作服务器                                                                         |
-| components     | 自定义组件                                                                               |
-| data/nlu       | Rasa NLU 的训练数据                                                                      |
-| data/rules     | Rasa 规则数据                                                                            |
-| data/stories   | Rasa 故事数据                                                                            |
-| domain         | 领域指定了 rasa 应该知道的意图、实体、插槽、响应、表单和动作。它还定义了会话会话的配置。 |
-| models         | 训练的模型数据                                                                           |
-| pipeline       | 流水线组件配置                                                                           |
-| server         | 前后端服务                                                                               |
-| source         | RASA 源代码，只是用来调试 DIET 的*(:з」∠)*                                               |
-| document       | langchain 学习的知识库                                                                   |
-| .env           | 相关环境变量，主要用于 API                                                               |
-
-#### .env 文件如下：
-
-```
-SENIVERSE_KEY=
-NEWS_KEY=
-Exchange_KEY=
-TIANAPI_KEY=
-OPENAI_API=
-OPENAI_URL=https://api.openai.com/v1
-```
+| 文件          | 描述                                                                                     |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| actions       | 自定义动作服务器                                                                         |
+| components    | 自定义组件                                                                               |
+| data/nlu      | Rasa NLU 的训练数据                                                                      |
+| data/rules    | Rasa 规则数据                                                                            |
+| data/stories  | Rasa 故事数据                                                                            |
+| data/keywords | 自定义组件：关键词的配置文档 keywords.yml                                                |
+| domain        | 领域指定了 rasa 应该知道的意图、实体、插槽、响应、表单和动作。它还定义了会话会话的配置。 |
+| models        | 训练的模型数据                                                                           |
+| pipeline      | 流水线组件配置                                                                           |
+| server        | 前后端服务                                                                               |
+| source        | RASA 源代码，只是用来调试 DIET 的*(:з」∠)*                                               |
+| document      | langchain 学习的知识库                                                                   |
+| config.yml    | 相关配置                                                                                 |
 
 <hr/>
 
@@ -65,18 +55,19 @@ OPENAI_URL=https://api.openai.com/v1
 
 </h3>
 
-| 功能         | 描述         | API 来源                               | 数据来源  | 说明   |
-| ------------ | ------------ | -------------------------------------- | --------- | ------ |
-| 闲聊         | 简易打招呼   |                                        | -         | -      |
-| 任务型       | 查询天气     | [心知天气](https://www.seniverse.com/) | -         | -      |
-| 任务型       | 查询快递     | [快递网](http://www.kuaidi.com/)       | -         | -      |
-| 任务型       | 查询车票     | [12306](https://kyfw.12306.cn/)        | smp2019   | -      |
-| 任务型       | 查询新闻     | [聚合](https://www.juhe.cn/)           | -         | -      |
-| 任务型       | 微博热搜     | [天行](https://www.tianapi.com/)       | -         | -      |
-| 任务型       | 今日头条     | [天行](https://www.tianapi.com/)       | -         | -      |
-| 任务型       | 查询汇率     | [聚合](https://www.juhe.cn/)           | -         | -      |
-| 任务型       | 食物营养     | [天行](https://www.tianapi.com/)       | -         | -      |
-| 未知意图处理 | 未知意图处理 | langchain                              | langchain | -      |
+| 功能         | 描述                 | API 来源                               | 数据来源  | 说明 |
+| ------------ | -------------------- | -------------------------------------- | --------- | ---- |
+| 关键词       | 检测到关键词进行回复 |                                        | -         | -    |
+| 闲聊         | 简易打招呼           |                                        | -         | -    |
+| 任务型       | 查询天气             | [心知天气](https://www.seniverse.com/) | -         | -    |
+| 任务型       | 查询快递             | [快递网](http://www.kuaidi.com/)       | -         | -    |
+| 任务型       | 查询车票             | [12306](https://kyfw.12306.cn/)        | smp2019   | -    |
+| 任务型       | 查询新闻             | [聚合](https://www.juhe.cn/)           | -         | -    |
+| 任务型       | 微博热搜             | [天行](https://www.tianapi.com/)       | -         | -    |
+| 任务型       | 今日头条             | [天行](https://www.tianapi.com/)       | -         | -    |
+| 任务型       | 查询汇率             | [聚合](https://www.juhe.cn/)           | -         | -    |
+| 任务型       | 食物营养             | [天行](https://www.tianapi.com/)       | -         | -    |
+| 未知意图处理 | 未知意图处理         | langchain                              | langchain | -    |
 
 <hr/>
 
@@ -87,7 +78,9 @@ OPENAI_URL=https://api.openai.com/v1
 </h3>
 
 ## 依赖安装
-`pip install -r requirements.txt`
+
+`pip install -r requirements.txt` (python3.10)
+`pip install -r requirements.py38.txt` (python3.8)
 
 ### langchain 依赖 nltk
 
@@ -124,6 +117,7 @@ OPENAI_URL=https://api.openai.com/v1
 ### 交互式对话
 
 `rasa interactive --domain domain`
+
 `rasa interactive --domain domain --model <指定模型>`
 
 ### 故事可视化
@@ -217,6 +211,14 @@ _微调模型时通常需要比从头开始训练时更少的迭代次数（epoc
 ### 激活虚拟环境
 
 `conda activate rasa`
+
+#### 使用.venv
+
+`python -m venv .venv `
+
+`.venv\Scripts\activate `
+
+`.venv\Scripts\python -m rasa`
 
 <hr />
 

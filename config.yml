@@ -33,6 +33,8 @@ pipeline:
     tensorboard_log_directory: ./log
     tensorboard_log_level: EPOCH
     constrain_similarities: True
+  - name: components.keyword.KeywordComponent
+    keywords_file: "data/keywords/keywords.yml"
   - name: FallbackClassifier
     threshold: 0.8
   - name: ResponseSelector
@@ -65,3 +67,30 @@ policies:
     core_fallback_threshold: 0.8
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: True
+
+apis:
+  - name: News
+    url: http://v.juhe.cn/toutiao/index
+    key:  
+  - name: WeiboHot
+    url: https://apis.tianapi.com/weibohot/index
+    key:  
+  - name: ToutiaoHot
+    url: https://apis.tianapi.com/toutiaohot/index
+    key: 
+  - name: Express
+    url: http://www.kuaidi.com/index-ajaxselectcourierinfo- 
+  - name: Exchange
+    url: http://op.juhe.cn/onebox/exchange/currency
+    key:  
+  - name: Food
+    url: https://apis.tianapi.com/nutrient/index
+    key:  
+  - name: OpenAI
+    url: https://api.openai.com/v1
+    key: sk- 
+  - name: Train
+    url: https://kyfw.12306.cn/otn/leftTicket/queryZ
+  - name: Weather
+    url: https://api.seniverse.com/v3/weather/daily.json
+    key:  

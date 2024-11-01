@@ -12,6 +12,8 @@ from rasa_sdk.executor import CollectingDispatcher
 import requests
 from typing import Any, Dict, List, Text, Optional
 
+from actions import ConfigLoader
+config = ConfigLoader.get_config()
 
 class ActionExchangeRate(Action):
 
@@ -36,11 +38,14 @@ class ActionExchangeRate(Action):
         number = tracker.get_slot("number")
         currency = tracker.get_slot("currency")
         
-        # 发起 GET 请求
-        url = 'http://op.juhe.cn/onebox/exchange/currency'
+        _config = next(
+            item for item in config['apis'] if item['name'] == 'Exchange')
+        url = _config['url']
+        api_key = _config['key']
+
         try:
             params = {
-                'key': os.getenv("Exchange_KEY", ""),
+                'key': api_key,
                 'from': currency_map[currency],
                 'to': 'CNY',
             }

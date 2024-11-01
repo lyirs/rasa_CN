@@ -1,0 +1,7 @@
+version: "3.1"
+
+rules:
+  - rule: Respond to keyword intent
+    steps:
+      - intent: keyword_intent
+      - action: action_keyword_response
